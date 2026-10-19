@@ -1,0 +1,126 @@
+<div class="row mar"  id="content" #content id="contentToConvert"  id="your-table-id" >
+    <div class="marg   mWidth  mt-4 ">
+        <h4>Détails Prestation</h4>
+         
+          <div >
+    
+        <table class="mt-2">
+          <h5><tr><td>Label :</td>
+                  <td>{{prestation.label}}</td></tr></h5>
+          <tr><td>Information additionnelles</td></tr>
+          
+        </table>
+        <div class="container  mt-4 h"> 
+          <table class="table table-bordered table-hover  " >
+            <thead class="thead-dark">
+            <tr>
+            <th scope="col">Réf</th>
+            <th colspan="2">Description</th>
+            <th scope="col" >Quantité</th>
+            <th colspan="2">Prix unitaire HT</th>
+            <th scope="col">TVA</th>
+            <th colspan="2">Montant HT</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let refrencePrestation of prestation.references; let i = index">
+                <td >
+                  {{ refrencePrestation?.refid }}
+                </td>
+  
+                <td colspan="2">
+                  
+                    {{ refrencePrestation?.description }}
+                 
+                </td>
+                <td >
+                  {{ refrencePrestation?.quantite }} 
+               </td>
+                <td colspan="2">
+                  
+                  {{ refrencePrestation?.prix_unitaire_HT }}
+               
+                </td>
+               
+  
+                <td>
+                  
+                    {{prestation?.optiontva }}%
+                 
+                </td>
+                
+               
+                <td colspan="2">
+                  
+                    {{ refrencePrestation?.montant_HT }}DNT
+                </td>
+              </tr>
+            
+            </tbody>
+            <tfoot class="">
+              <tr>
+                <th colspan="6" class="text-right">Total HT</th>
+                <td  colspan="3"class="text-right"> {{ prestation?.totalht }}DNT</td>
+              </tr>
+              <tr>
+                <th colspan="6" class="text-right">TVA</th>
+                
+                <td colspan="3" class="text-right"> {{ prestation?.tva }} </td>
+              </tr>
+             <!-- <tr>
+                <th colspan="6" class="text-right">Timbre fiscal</th>
+                
+                <td colspan="3" class="text-right">{{ prestation?.timbrefiscal }} </td>
+              </tr>-->
+              <tr>
+                <th colspan="6" class="text-right">Total TTC</th>
+                
+                <td colspan="3" class="text-right">{{ prestation?.totalttc }}</td>
+              </tr>
+            </tfoot>
+          </table>
+        
+        
+      </div>
+        
+        
+     <br>
+  
+  <!--
+  <table class="tab">
+    <tr >
+      
+      <td colspan="3"> Cyber Park Regional</td>
+      <td colspan="3"> AZ IT S.A.R.L </td>
+      <td colspan="3">Banque:  Attijari Bank</td>
+    </tr>
+    <tr >
+      
+      <td colspan="3"> 4137 Zarzis</td>
+      <td colspan="3">Téléphone: 26 676 435</td>
+      <td colspan="3"> Code banque:  TN59</td>
+    </tr>
+    <tr >
+      
+      <td colspan="3"> Tunisie</td>
+      <td colspan="3"> Email: azit.contact@azit.fr</td>
+      <td colspan="3">N° de compte:  40830064589443</td>
+    </tr>
+    <tr>
+      
+      <td colspan="3"> N° Siren ou Siret : 16231512</td>
+      <td colspan="3"><a href="https://azit.fr/">www.azit.fr</a></td>
+      <td colspan="3">SWIFT : BSTUTNTT</td>
+    </tr>
+  </table>
+  
+-->
+    </div>
+  </div>
+  </div>
+     <div class="button-container">
+        <button class="btn btn-primary mar" (click)="onBack()">Retour</button>
+        <!--<button class="btn btn-primary mar " (click)="makePdf()">Export PDF</button>-->
+        <button class="btn btn-primary btn-xs mar" (click)="transformHTMLToExcel()">{{'Export to Excel'|translate}}</button>  
+      </div>
+  

@@ -1,0 +1,168 @@
+
+            <div class="container-xxl position-relative  d-flex p-0">
+                <div class=" mt-2 px-4">
+        
+                    <h4 class="size">{{'List of Companies'|translate}}</h4>
+                    
+        
+                  
+                    
+                   
+                <div class="cardBox">
+                    <div class="card">
+                        <div >
+                            <div class="numbers">2000£</div>
+                            <div class="cardName">Revenus Total</div>
+                        </div>
+                
+                        <div class="iconBx">
+                            
+                        </div>
+                    </div>
+                
+                    <div class="card">
+                        <div>
+                            <div class="numbers">1000</div>
+                            <div class="cardName">Factures </div>
+                        </div>
+                
+                        <div class="iconBx">
+                           
+                        </div>
+                    </div>
+                
+                    <div class="card">
+                        <div>
+                            <div class="numbers">284</div>
+                            <div class="cardName">Comments</div>
+                        </div>
+                
+                        <div class="iconBx">
+                            
+                        </div>
+                    </div>
+                
+                    
+                </div>
+                
+        
+                  
+                        <div class="details mt-4 ">
+                            <div class="recentOrders">
+                              <div class="cardHeader">
+                                <form class="search">
+                                  <input class="form-control " type="search" placeholder="{{'Search'|translate}}">
+                                </form>
+                               <div>
+                                <button class="btn btn-primary" type="submit" (click)="onNewSociete()">{{'Add'|translate}}</button>
+                                &nbsp;
+                                <button class="btn btn-primary btn-xs" (click)="exportexcel()">{{'Export to Excel'|translate}}</button> 
+                               </div>
+                    </div>
+                    <hr>
+                    
+        
+                
+                  <div class="tab">
+                    <table class="" id="excel-table">
+                        <thead class="">
+                    <tr>
+                        <th>{{'Company Name'|translate}}</th>
+                        <th>{{'Company telephone number'|translate}}</th>
+                        <th>{{'Siret company'|translate}}</th>
+                        <th>{{'Actions'|translate}}</th>
+                        <th>{{'Invoice'|translate}}</th>
+                    
+                    </tr>
+                    </thead>
+                <tbody >
+                <tr *ngFor="let societe of searchSocietes | paginate: {
+                    itemsPerPage: pageSize,
+                    currentPage: page,
+                    totalItems: count
+                    }; let i= index " >
+
+                    
+                    <td> 
+                        {{ societe.nomsociete }}
+                    </td>
+                    
+                    <td>
+                        {{ societe.telephone }}
+                    </td>
+                    
+                    <td> 
+                        {{ societe.siret }}
+                    </td>
+
+                    <td>
+                        <span style="color: rgb(13, 161, 229);">
+                            <i-bs name="eye"
+                                width="20"
+                                height="25" 
+                                (click)="onViewSociete(societe.id)">
+                            </i-bs>
+                        </span>   
+
+                        &nbsp;
+
+                        <span style="color: rgb(22, 109, 222);">
+                            <i-bs name="pencil-square"
+                                width="20"
+                                height="25" 
+                                (click)="oneditSociete(societe.id)">
+                            </i-bs>
+                        </span>                        
+                        
+                        &nbsp;
+
+                        <span style="color: red; ">
+                            <i-bs name="archive-fill"
+                                width="20"
+                                height="25"
+                                (click)="onDeleteSociete(societe.id)">
+                            </i-bs>  
+                        </span>                   
+                     </td>
+                     
+                     <td>
+                         
+                        <button class="btn btn-primary  ">
+                            <a class="nav-link" (click)="onViewfacture(societe.id)"> {{'Invoice List'|translate}} </a> 
+                        </button>
+                        <button class="btn btn-primary ms-3 ">
+                            <a class="nav-link" (click)="onViewdevis(societe.id)"> {{'Estimate List'|translate}} </a> 
+                        </button>
+                                  
+                     </td>
+
+                </tr>
+                
+                </tbody>
+            </table>
+        </div>
+                <div class="row">
+                        <div class="col-md-6">
+                            <pagination-controls
+                                previousLabel="{{'Prev'|translate}}"
+                                nextLabel="{{'Next'|translate}}"
+                                [responsive]="true"
+                                (pageChange)="handlePageChange($event)"
+                                >
+                            </pagination-controls>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <strong>{{'Element per page'|translate}}:</strong>
+                            <select (change)="handlePageSizeChange($event)" >
+                                <option *ngFor="let size of pageSizes" [ngValue]="size">
+                                    {{size}}
+                                </option>
+                            </select>
+                        </div>
+                </div>
+
+            
+            
+       </div>         
+</div>

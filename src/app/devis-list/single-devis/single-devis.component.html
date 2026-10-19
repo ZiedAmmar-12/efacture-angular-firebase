@@ -1,0 +1,185 @@
+<div class="row mar "  id="content" #content id="contentToConvert"  id="your-table-id" exportAs >
+  <div class="marg   mWidth  mt-4 " >
+      
+        <div class="row ">
+          <table>
+            <tr>
+              <td class=" col-sm-8 col-md-8 col-xl-8 color  ">Devis N°:{{devis?.numDevis}}</td>
+              <td class="col-sm-4 col-md-4 col-xl-4 text-right"><img [src]="imageUrl" width="100px" height="100px" ></td>
+            </tr>
+          </table>
+     
+      
+        </div>
+        <div >
+          <table class=""style="width: 300px;">
+            <tr class="col-sm-12 col-md-12 col-xl-12">
+              <td class="color " >
+                {{nomsocietedata?.nomsociete }} S.A.R.L</td></tr>
+                <tr><td>{{nomsocietedata?.adresse}}</td></tr>
+                <tr><td colspan="2">{{nomsocietedata?.codepostale}}</td></tr>
+                <tr><td >Téléphone:{{nomsocietedata?.telephone}}</td> 
+                  
+
+                 
+            
+          </table>
+          <!--
+          <div class="color " >
+             AZ IT S.A.R.L <br />
+          </div>
+             Cyber Parc Regional<br>
+             4137 Zerzis Tunisie<br />
+             Téléphone:26 676 435 <br />
+        </div>-->
+        <div class="row mt-2">
+        <table class="bgcolor col-sm-9 col-md-9 col-xl-9">
+          <tr><td colspan="2">Date du devis:</td>
+              <td colspan="2">{{ devis?.datecreation | date : "dd/MM/YYYY" }}</td>
+          </tr>
+          <tr><td colspan="2">Référence du devis:</td>
+              <td colspan="2">{{ devis?.numDevis }}</td>
+          </tr>
+          <tr><td colspan="2">Date validité devis :</td>
+              <td colspan="2"> {{ devis?.date_valid_fact }}</td>
+          </tr>
+          <tr><td colspan="2">Nom Client:</td>
+              <td colspan="2">{{ nomclientdata?.nomclient }}</td>
+          </tr>
+          <tr><td colspan="2">E-mail Client:</td>
+              <td colspan="2">{{ nomclientdata?.email }}</td>
+          </tr>
+          <tr><td colspan="2">Contact Client:</td> 
+              <td colspan="2">{{ nomclientdata?.telephone }}</td>
+          </tr>
+        </table>
+     
+        <div  class="col-sm-2 col-md-2 col-xl-2  ">
+        <table >
+          <tr><td class="">Destinataire</td></tr>
+          <tr><td class="cl"  >{{ nomclientdata?.nomclient }}</td></tr>
+          <tr><td class="cl" >{{ nomclientdata?.adresse }}</td></tr>
+        </table>
+        </div>
+    </div>
+      <table class="mt-2">
+        
+        <tr><td>Information additionnelles</td></tr>
+        <tr><td style="width:300px">Service après-vente - Garantie : 1 an</td></tr>
+      </table>
+      <div class="container  mt-4 h"> 
+        <table class="table table-bordered table-hover  " >
+          <thead class="thead-dark">
+          <tr>
+          <th scope="col">Réf</th>
+          <th colspan="2">Description</th>
+          <th scope="col" >Quantité</th>
+          <th colspan="2">Prix unitaire HT</th>
+          <th scope="col">TVA</th>
+          <th colspan="2">Montant HT</th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let refrenceDevis of devis?.references; let i = index">
+              <td >
+                {{ refrenceDevis?.refid }}
+              </td>
+
+              <td colspan="2">
+                
+                  {{ refrenceDevis?.description }}
+               
+              </td>
+              <td >
+                {{ refrenceDevis?.quantite }} 
+             </td>
+              <td colspan="2">
+                
+                {{ refrenceDevis?.prix_unitaire_HT }}
+             
+              </td>
+             
+
+              <td>
+                
+                  {{ devis?.optiontva }}%
+               
+              </td>
+              
+             
+              <td colspan="2">
+                
+                  {{ refrenceDevis?.montant_HT }}{{devis?.type_dev_fac}}
+               
+              </td>
+            </tr>
+          
+          </tbody>
+          <tfoot class="">
+            <tr>
+              <th colspan="6" class="text-right">Total HT</th>
+              <td  colspan="3"class="text-right"> {{ devis?.totalht }}{{devis?.type_dev_fac}}</td>
+            </tr>
+            <tr>
+              <th colspan="6" class="text-right">TVA</th>
+              
+              <td colspan="3" class="text-right"> {{ devis?.tva }} </td>
+            </tr>
+            <tr>
+              <th colspan="6" class="text-right">Timbre fiscal</th>
+              
+              <td colspan="3" class="text-right">{{ devis?.timbrefiscal }} </td>
+            </tr>
+            <tr>
+              <th colspan="6" class="text-right">Total TTC</th>
+              
+              <td colspan="3" class="text-right">{{ devis?.totalttc }}{{devis?.type_dev_fac}}</td>
+            </tr>
+          </tfoot>
+        </table>
+      
+      
+    </div>
+      
+      
+   <br>
+
+<div>
+<table class="tab">
+  <tr >
+    
+    <td colspan="3"> Directeur : {{nomsocietedata?.directeur}}</td>
+    <td colspan="3"> Sociéte:{{nomsocietedata?.nomsociete}} S.A.R.L </td>
+    <td colspan="3">Banque:{{nomsocietedata?.nombanque}}  </td>
+  </tr>
+  <tr >
+    
+    <td colspan="3"> Code Postale: {{nomsocietedata?.codepostale}}</td>
+    <td colspan="3">Téléphone: {{nomsocietedata?.telephone}}</td>
+    <td colspan="3"> Code banque: {{nomsocietedata?.codebanque}}</td>
+  </tr>
+  <tr >
+    
+    <td colspan="3"> Adress:{{nomsocietedata?.adresse}}</td>
+    <td colspan="3"> Email:{{nomsocietedata?.email}}</td>
+    <td colspan="3">N° de compte:{{nomsocietedata?.numcompte}}</td>
+  </tr>
+  <tr>
+    
+    <td colspan="3"> Siret :{{nomsocietedata?.siret}} </td>
+    <td colspan="3">Site Web:<a href="{{nomsocietedata.siteweb}}"> {{nomsocietedata?.siteweb}}</a></td>
+    <td colspan="3">SWIFT : {{nomsocietedata?.swift}}</td>
+  </tr>
+</table>
+
+</div>
+  </div>
+</div>
+</div>
+
+   <div class="button-container">
+   
+      <button class="btn btn-primary mar" (click)="onBack()">Retour</button>
+      <button class="btn btn-primary mar " (click)="downloadPDF()">Export PDF</button>
+      <button class="btn btn-primary btn-xs mar" (click)="transformHTMLToExcel()">{{'Export to Excel'|translate}}</button>  
+    </div>

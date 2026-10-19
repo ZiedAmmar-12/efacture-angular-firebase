@@ -1,0 +1,35 @@
+<div class="row mar">
+    <div class="content mt-2 px-4">
+    <div class="col-sm-12 col-sm-offset-2   ">
+        <h4 class="" >{{'Edit Category'| translate}}</h4>
+        <form class="form-horizontal" [formGroup]="CategorieFormedit" (ngSubmit)="onUpdateCategorieedit(CategorieFormedit)">
+            <div class="row">  
+
+            <div class="md0UAd modal-title" aria-hidden="true" dir="auto" style="color: red;" >*{{'Required'|translate}}</div>
+
+           
+                <div class="form-group col-md-6">
+                    <label for="nomcategorie"><h6>{{'Name Category'|translate}} </h6></label> <span class="vnumgf" id="9" aria-label="Question obligatoire" style="color: red;"> *</span>
+                    <input type="text" class="form-control" id="nomcategorie" formControlName="nomcategorie" maxlength="35">
+                    
+                </div>
+                
+           
+                <br>
+                
+                <div class="modal-footer"> 
+                    <button class="btn btn-success" 
+                            [disabled]="CategorieFormedit.invalid || fileIsUploading"
+                            type="submit">{{'Confirme'|translate}}</button>  
+                    &nbsp;
+                    <button class="btn btn-primary" (click)="onBack()" >{{'Back'|translate}}</button>
+                </div>
+                <br>
+            
+            <br><br>
+            </div>
+        </form>
+    </div>
+    </div>
+
+</div>

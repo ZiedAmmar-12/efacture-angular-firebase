@@ -1,0 +1,188 @@
+<div class="row" style="background-color:rgb(251, 252, 252)">
+    <div class="content mt-2 px-4">
+    <div class="col-md-12"  style="background-color:rgb(207, 211, 211)">
+        <h4 class="" style="background-color:rgb(169, 231, 233)">Enregistrer une nouvelle Facture</h4>
+        <form class="form-horizontal" [formGroup]="FactureForm" (ngSubmit)="onSaveFacture()" *ngIf="this.nomsocietedata?.id"> 
+
+            <div class="md0UAd" aria-hidden="true" style="background-color:rgb(213, 219, 219) ; color: red;" >*Obligatoire</div>
+
+            <div class="row">
+            <div class="col-md-6">
+
+                <div class="form-group">
+                    <label for="idsociete"><h6>Société</h6></label> <span class="vnumgf" id="26" aria-label="Question obligatoire" style="color: red;"> *</span>
+                    <input type="hidden" class="form-control" id="idsociete" value="{{this.nomsocietedata.id}}" formControlName="idsociete">
+                    : {{this.nomsocietedata.nomsociete}}
+                    
+                </div>
+                <hr>
+
+                <div class="form-group">
+                    <label for="idclient"><h6>Client </h6></label> <span class="vnumgf" id="27" aria-label="Question obligatoire" style="color: red;"> *</span>
+                    <select  class="form-control" id="idclient" formControlName="idclient">
+                        <option *ngFor="let client of clientdata ; let i= index " value="{{client.id}}">{{client.nomclient}}</option>
+                    </select>
+                    <div *ngIf="idclient?.touched && idclient?.invalid" class="error">
+                        <span class="RHiWt" style="color: red;"> Ce champ est obligatoire </span>
+                    </div>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <label for="type_dev_fac"><h6>Type de device de facture </h6></label> <span class="vnumgf" id="27" aria-label="Question obligatoire" style="color: red;"> *</span>
+                    <select  class="form-control" id="type_dev_fac" (change)="selecteddeviseoption()" formControlName="type_dev_fac">
+                        <option value="TND"> TND </option>
+                        <option value="Euro"> EURO </option> 
+                    </select>
+                    <div *ngIf="type_dev_fac?.touched && type_dev_fac?.invalid" class="error">
+                        <span class="RHiWt" style="color: red;"> Ce champ est obligatoire </span>
+                    </div>
+                </div>
+             </div>
+             <div class="col-md-6">
+    
+                <div class="form-group">
+                    <label for="numfacture"><h6>N° Facture </h6></label> <span class="vnumgf" id="25" aria-label="Question obligatoire" style="color: red;"> *</span>
+                    <input type="hidden" class="form-control" id="numfacture" value="{{this.numfacturedata}}" formControlName="numfacture">
+                    :  {{this.numfacturedata}}
+                    
+                </div>
+                <hr>
+                     
+                <div class="form-group">
+                    <label for="date_valid_fact"><h6> Date validitée facture </h6></label> <span class="vnumgf" id="32" aria-label="Question obligatoire" style="color: red;"> *</span>
+                    <input type="date" class="form-control" id="date_valid_fact" value="test" formControlName="date_valid_fact">
+                    <div *ngIf="date_valid_fact?.touched && date_valid_fact?.invalid" class="error">
+                        <span class="RHiWt" style="color: red;"> Ce champ est obligatoire </span>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                <br>
+                <h2>Information additionnelles</h2>
+                <hr>
+                <div class="col-md-12 text-right">
+                    <button type="button" class="btn btn-primary" (click)="addrefrenceFormGroup()">Ajouter</button>
+                    &nbsp;
+                    <button type="button" class="btn btn-success" (click)="calculertotal()">Calculer</button>
+                    
+                </div> <br>  
+
+                <div formArrayName="references">
+
+                    <table class="table align-middle mb-0 bg-white">
+                        <thead class="bg-light">
+                        <tr>
+                            <th>Réf</th>
+                            <th>Description</th>
+                            <th>Quantité</th>
+                            <th>Prix unitaire HT</th>
+                            <th>Montant HT</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <ng-container  *ngFor="let refrenceform of referencesforms.controls; let i = index;" >
+                        <tr [formGroupName]="i">    
+    
+                            <td> 
+                                {{i+1}}
+                                <input type="hidden" class="form-control" [id]="'refid' + i" [value]="i+1" formControlName="refid">
+                            </td>
+                            
+                            <td>
+                                <input type="textarea" class="form-control" [id]="'description' + i" formControlName="description">
+                            </td>
+                            
+                            <td> 
+                                <input type="number" class="form-control" [id]="'quantite' + i" formControlName="quantite">
+                            </td>
+                            
+                            <td> 
+                                <input type="number" class="form-control" [id]="'prix_unitaire_HT' + i" formControlName="prix_unitaire_HT">
+                            </td>
+                            <td> 
+                                <input type="number" class="form-control" [id]="'montant_HT' + i"  formControlName="montant_HT">
+                            </td>
+                            <td>
+                                <button *ngIf="i !=0"
+                                class="btn btn-danger mt-4"
+                                type="button"
+                                (click)="deletereferenceFormGroup(i)"
+                              >
+                                Delete
+                              </button>
+                            </td>
+                        </tr>
+                        </ng-container>
+                        </tbody>
+                    </table>
+
+                </div>
+                
+
+                <table class="table align-middle mb-0 bg-white">
+                    <tbody>
+                    <tr>
+                        <th colspan="3"></th>
+                        <th>Total HT</th>
+                        <td> 
+                            <input type="number" class="form-control" id="totalht"  formControlName="totalht">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th>Option TVA </th>
+                        <td> 
+                            <select  class="form-control" id="optiontva" formControlName="optiontva" (change)="selecteoptiontva()">
+                                <option value="0"> aucun </option>
+                                <option value="19"> 19% </option>
+                                <option value="20"> 20% </option>
+                            </select>
+
+                        </td>
+                        <th>TVA</th>
+                        <td> 
+                            <input type="number" class="form-control" id="tva" formControlName="tva">
+                        </td>
+                       
+                    </tr>
+                    <tr *ngIf="this.typedevfac=='TND'">
+                        <th colspan="3"></th>
+                        <th>Timbre fiscal</th>
+                        <td>
+                            <input type="number" class="form-control" id="timbrefiscal"  formControlName="timbrefiscal">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="3"></th>
+                        <th>Total TTC</th>
+                        <td> 
+                            <input type="number" class="form-control" id="totalttc" formControlName="totalttc">
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <br>
+                
+                <div class="modal-footer"> 
+                    <button class="btn btn-success" 
+                            [disabled]="FactureForm.invalid"
+                            type="submit">Enregistrer</button>  
+                    &nbsp;
+                    <button class="btn btn-primary" (click)="onBack()" >Retour</button>
+                </div>
+                <br>
+            </div>
+        </div>
+            <br><br>
+            
+            <input type="hidden" class="form-control" id="timbrefiscal" *ngIf="this.typedevfac=='Euro'|| this.typedevfac==''" formControlName="timbrefiscal" value="0">
+        </form>
+       
+    </div>
+    </div>
+</div>
+    <br><br>

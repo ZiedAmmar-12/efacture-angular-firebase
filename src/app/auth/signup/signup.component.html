@@ -1,0 +1,197 @@
+<!--<div class="row">
+    <div class="col-sm-8 col-sm-offset-2" style="margin: auto;" >
+      <h2>Créer un compte</h2><hr>
+      <form [formGroup]="signUpForm" (ngSubmit)="signUpOnsubmit()">
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" id="email" class="form-control" formControlName="email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" class="form-control" formControlName="password">
+        </div>
+        <br>
+        <button class="btn btn-primary" type="submit" [disabled]="signUpForm.invalid">Créer mon compte</button>
+        <br>
+        <br>
+        <button class="btn btn-primary" (click)="onBack()" >Retour</button>
+      </form>  
+      <p class="text-danger">{{errorMessage}}</p>
+    </div>
+</div>
+
+-->
+ <!-- Right
+<section class="">
+  <div class="container-fluid h-custom">
+    <div>
+      <ul class="navbar-nav  selectLang ms-3">
+        <li class="nav-item">
+            
+            <select class="form-select" (change)="ChangeLang($event)" name="" id="">
+                <option [selected]="lang==='en'" value="en">En</option>
+                <option [selected]="lang==='fr'" value="fr">Fr</option>
+                <option [selected]="lang==='ar'" value="ar">Ar</option>
+            </select>
+        </li>
+    </ul>
+  </div>
+    <div class="row d-flex justify-content-center align-items-center ">
+   
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+          class="img-fluid" alt="Sample image">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 ">
+        <form [formGroup]="signUpForm" (ngSubmit)="signUpOnsubmit()">
+         
+
+          <div class="bg my-4">
+            <p class=" fw-bold  mb-5 ">{{'Create an account'|translate}}</p>
+          </div>
+
+      
+          <div class="form-outline mb-4">
+            <label class="form-label" for="userName">{{'userName'|translate}}</label>
+            <input type="text" id="userName" class="form-control form-control-lg" placeholder="Enter a valid nom {{'userName'|translate}}"  name="userName" formControlName="userName"/>
+            
+          </div>
+         
+          <div class="form-outline mb-4">
+            <label class="form-label" for="email">{{'Email address'|translate}}</label>
+            <input type="email" id="email" class="form-control form-control-lg" placeholder="{{'Enter Email address'|translate}}"  name="email" formControlName="email"/>
+          </div>
+
+        
+          <div class="form-outline mb-3">
+            <label class="form-label" for="password">{{'Password'|translate}}</label>
+            <input type="password" id="password" name="password" class="form-control form-control-lg"
+              placeholder="{{'Enter password'|translate}}"  formControlName="password"/>
+            
+          </div>
+      
+         
+          <p class="text-danger">{{errorMessage}} </p>
+          <div class=" align-items-center">
+           
+            <br>
+            <button class="btn btn-primary" type="submit" [disabled]="signUpForm.invalid">{{'Create an account'|translate}}</button>
+            <br>
+            <br>
+
+            <button class="btn btn-primary" (click)="onBack()" >{{'Back'|translate}}</button>
+          </div>
+
+        
+
+        </form>
+        
+      </div>
+    </div>
+  </div>
+  <div
+    class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 ">
+    
+    <div class="text-white mb-3 mb-md-0">
+      Copyright © 2020. All rights reserved.
+    </div>
+    
+    <div>
+      <a href="#!" class="text-white me-4">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="#!" class="text-white me-4">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="#!" class="text-white me-4">
+        <i class="fab fa-google"></i>
+      </a>
+      <a href="#!" class="text-white">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
+    
+  </div>
+</section>
+-->
+
+<!--                                         new design                                  -->
+<div class="accueil">
+
+  <div class="d-flex">
+    <div class=" division1" >
+      <div class="row  ">
+        <div >
+        <ul class="navbar-nav  selectLang ms-3">
+          <li class="nav-item">
+              
+              <select class="form-select" (change)="ChangeLang($event)" name="" id="">
+                  <option [selected]="lang==='en'" value="en">En</option>
+                  <option [selected]="lang==='fr'" value="fr">Fr</option>
+                  <option [selected]="lang==='ar'" value="ar">Ar</option>
+              </select>
+          </li>
+          </ul>
+         </div>
+        <div class="">
+          <img src="../../../assets/images/connexion.png" class="img-f" alt="Sample image">
+        </div>
+  
+        
+      </div>
+    </div>
+    <div class=" division " >
+      <div class=" bgForm mt-4">
+        <form [formGroup]="signUpForm" (ngSubmit)="signUpOnsubmit()">
+           
+          <div class="text-center mt-4 pt-2">
+          
+            <span ><a routerLink="/auth/signin" class="btnCnx">{{'Log in'|translate}}</a></span>
+            <span><a routerLink="/auth/signup" class="btnCnx">{{'Register'|translate}}</a></span>
+          </div>
+          
+            <h4 class="bienvenue mt-4">{{'WELCOME'| translate}}</h4>
+          <div class="bg my-4">
+            <p class="  mt-2 pt-1 mb-0 text-center">{{'Create an account'|translate}}</p>
+          </div>
+  
+      
+          <div class="form-outline mb-4 mx-4 mt-4">
+            <label class="form-label" for="userName">{{'userName'|translate}}</label>
+            <input type="text" id="userName" class="form-control  inputcnx" placeholder="Enter a valid nom {{'userName'|translate}}"  name="userName" formControlName="userName"/>
+            
+          </div>
+         
+          <div class="form-outline mb-4 mx-4 mt-4">
+            <label class="form-label" for="email">{{'Email address'|translate}}</label>
+            <input type="email" id="email" class="form-control  inputcnx" placeholder="{{'Enter Email address'|translate}}"  name="email" formControlName="email"/>
+          </div>
+  
+        
+          <div class="form-outline mb-4 mx-4 mt-4">
+            <label class="form-label" for="password">{{'Password'|translate}}</label>
+            <input type="password" id="password" name="password" class="  form-control inputcnx"
+              placeholder="{{'Enter password'|translate}}"  formControlName="password"/>
+            
+          </div>
+      
+         
+          <p class="text-danger">{{errorMessage}} </p>
+          <div class=" form-outline mb-4 mx-4 mt-4 ">
+           
+          
+            <button class=" btncnx" type="submit" [disabled]="signUpForm.invalid">{{'Create an account'|translate}}</button>
+  
+            <button class=" btncnx mt-2" (click)="onBack()" >{{'Back'|translate}}</button>
+          </div>
+  
+        
+  
+        </form>
+      
+    </div>
+    
+    </div>
+  
+  </div>
+  </div>

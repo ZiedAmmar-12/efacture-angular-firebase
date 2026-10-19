@@ -1,0 +1,72 @@
+<div class="row mar ">
+    <div class="content mt-2 px-4">
+    <div class="col-xs-12">
+        <!-- <img style="max-width:400px" *ngIf="user?.photo" [src]="user?.photo"> -->
+
+        <h1 class="">{{'Edit User'|translate}}</h1>
+        <form class="form-horizontal" name="edituser-form" [formGroup]="UserFormedit" (ngSubmit)="onUpdateUseredit(UserFormedit)"> 
+
+            <div class="row" >
+
+                    <div class="form-group col-md-6">
+                        <label for="nomdutilisateur"> <h6>{{'userName'|translate}}</h6> </label> <span class="vnumgf" id="4" style="color: red;"> *</span><br>
+                        <input type="text" class="form-control" id="nomdutilisateur" name="nomdutilisateur"  formControlName="nomdutilisateur" maxlength="35">
+                        <div *ngIf="UserFormedit.get('nomdutilisateur')?.touched && UserFormedit.get('nomdutilisateur')?.invalid && UserFormedit.get('nomdutilisateur')?.errors " class="error">
+                            <span *ngIf="UserFormedit.get('nomdutilisateur')?.hasError('required')" class="RHiWt" style="color: red;"> {{'This field is required'|translate}} </span>
+                            <span *ngIf="UserFormedit.get('nomdutilisateur')?.hasError('pattern')" class="RHiWt" style="color: red;"> {{'The username must be alphabet only and contain 3 to 35 characters'|translate}}</span>
+                        </div>
+                    </div>
+                <br>
+                    <div class="form-group col-md-6">
+
+                        <label for="gid"> <h6>{{'User Role'|translate}}</h6> </label> <span class="vnumgf" id="5" aria-label="Question obligatoire" style="color: red;"> *</span>
+                        <select name="gid"  class="form-control" id="gid" formControlName="gid" >
+                            <option [selected]="UserFormedit.value.gid == 22" value="22">Agent Facture</option>
+                            <option [selected]="UserFormedit.value.gid == 23" value="23">Manager Facture</option>
+                            <option [selected]="UserFormedit.value.gid == 24" value="24">Administarteur</option>
+                        </select>
+                        <div *ngIf="UserFormedit.get('gid')?.touched && UserFormedit.get('gid')?.invalid && UserFormedit.get('gid')?.errors" class="error">
+                            <span *ngIf="UserFormedit.get('gid')?.hasError('required')" class="RHiWt" style="color: red;">  {{'This field is required'|translate}}</span>
+                        </div>
+                    </div>
+                <br>
+                    <div class="form-group col-md-6">
+                        <label for="email"> <h6>{{'Email address'|translate}}</h6> </label><span class="vnumgf" id="6" aria-label="Question obligatoire" style="color: red;"> *</span><br> 
+                        <input type="email" class="form-control" name="email" id="email" formControlName="email">
+                        <div *ngIf="UserFormedit.get('email')?.touched && UserFormedit.get('email')?.invalid && UserFormedit.get('email')?.errors" class="error">
+                            <span *ngIf="UserFormedit.get('email')?.hasError('required')" class="RHiWt" style="color: red;"> {{'This field is required'|translate}} </span>
+                            <span *ngIf="UserFormedit.get('email')?.hasError('pattern')" class="RHiWt" style="color: red;">{{'Enter a valid email address'|translate}}</span>
+                        </div>
+                    </div>
+                <br>
+                    <div class="form-group col-md-6">
+                        <label for="etat"><h6> {{'User State'|translate}}</h6> </label> <span class="vnumgf" id="6" aria-label="Question obligatoire" style="color: red;"> *</span>
+                        <select name="etat" class="form-control" id="etat" formControlName="etat">
+                            <option [selected]="UserFormedit.value.etat == true" value="true">Actif</option> 
+                            <option [selected]="UserFormedit.value.etat == false" value="false">Non actif</option>
+                        </select>
+                    </div>
+                <br>
+                    <div class="form-group col-md-6">
+                        <label for="telephone"> <h6>{{'Mobile'|translate}}</h6> </label><span class="vnumgf" id="6" aria-label="Question obligatoire" style="color: red;"> *</span><br> 
+                        <input type="number" class="form-control" name="telephone" id="telephone" formControlName="telephone">
+                        <div *ngIf="UserFormedit.get('telephone')?.touched && UserFormedit.get('telephone')?.invalid && UserFormedit.get('telephone')?.errors" class="error">
+                            <span *ngIf="UserFormedit.get('telephone')?.hasError('required')" class="RHiWt" style="color: red;"> {{'This field is required'|translate}}</span>
+                        </div>
+                    </div>
+                <br>
+
+                <div class="modal-footer "> 
+                    <button class="btn btn-success"  [disabled]="UserFormedit.invalid "
+                            type="submit">{{'Edit'|translate}}</button>
+                    &nbsp;
+                    <button class="btn btn-primary" (click)="onBack()" >{{'Back'|translate}}</button>
+
+                </div>
+                <br>
+            </div>
+            <br><br><br>
+        </form>         
+    </div>
+    </div>
+</div>

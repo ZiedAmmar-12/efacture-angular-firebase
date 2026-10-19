@@ -1,0 +1,232 @@
+body {
+    background: #ccc;
+    padding: 30px;
+    font-size: 0.6em;
+    margin: 15px;
+  
+  }
+  
+  h6{font-size:1em;}
+  
+  /*.container {
+    width: 21cm;
+    min-height: 29.7cm;
+    
+  }*/
+  
+  .cl{
+    text-align: justify;
+  }
+  .invoice {
+    background: #fff;
+    width: 100%;
+    padding: 50px;
+  }
+  
+  .mWidth{
+    max-width: 750px;
+  
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .myline {
+  display: flex;
+  
+  
+  
+  
+  }
+  .marg{
+  margin: 23px;
+  }
+  .mycol {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;}
+  
+  
+  .line {
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+  
+  
+  
+  
+  }
+  /*.content{
+  width: auto;
+  }*/
+  .total{
+  margin-left: 400px;
+  }
+  .marge{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  
+  }
+  .w{width: 100%;}
+  .color{
+  color: rgb(64, 203, 203)
+  }
+  .bgcolor{
+  background-color: rgb(175, 245, 245);
+  margin-left: 12px;
+  
+  }
+  .mar{
+  margin:20px
+  
+  }
+  .marginb{
+  margin-bottom: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+  }
+  .info{
+  font-family: 'Times New Roman', Times, serif;
+  font-size: medium;
+  
+  }
+  .t{
+  height: 300px;
+  
+  width: 100%;
+  }
+  .f{
+  float: right;
+  width: 300px;
+  margin-right: 0px;
+  }
+  .b{
+  
+  text-align: center;
+  
+  
+  }
+  .h{
+    height: 450px;
+  }
+  .tab{
+    background-color: rgb(2, 2, 78);
+    color: antiquewhite;
+    width: 700px; 
+    border-radius: 10px;
+    margin-left: 15px;
+    margin-top: 50px;
+  }
+  .button-container {
+  text-align: center; /* To center align the buttons */
+  margin: 10px; /* Add margin around the button container */
+  justify-content: center;
+  
+  }
+  /* 
+  Max width before this PARTICULAR table gets nasty
+  This query will take effect for any screen smaller than 760px
+  and also iPads specifically.
+  */
+  @media 
+  only screen and (max-width: 750px),
+  (min-device-width: 768px) and (max-device-width: 1024px)  {
+  
+  /* Force table to not be like tables anymore */
+  table, thead, tbody,tfoot, th, td, tr { 
+    display: block; 
+    width: 300px;
+  }
+  .tab{
+    background-color: rgb(2, 2, 78);
+    color: antiquewhite;
+    width: 300px; 
+    border-radius: 10px;
+    margin-left: 15px;
+    margin-top: 50px;
+  }
+  
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr { 
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  
+  .g{height: 100px;}
+  
+  /*tr { border: 1px solid #ccc; }*/
+  
+  td { 
+    /* Behave  like a "row"
+    border: none;
+    border-bottom: 1px solid #eee;  */
+    position: relative;
+    /*padding-left: 50%; */
+  }
+  .h{
+    
+  }
+  td:before { 
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%; 
+    padding-right: 10px; 
+    white-space: nowrap;
+  }
+  
+  /*
+  Label the data
+  */
+  td:nth-of-type(1):before { content: ""; }
+  td:nth-of-type(2):before { content: ""; }
+  td:nth-of-type(3):before { content: ""; }
+  td:nth-of-type(4):before { content: ""; }
+  td:nth-of-type(5):before { content: ""; }
+  td:nth-of-type(6):before { content: ""; }
+  td:nth-of-type(7):before { content: ""; }
+  td:nth-of-type(8):before { content: ""; }
+  td:nth-of-type(9):before { content: ""; }
+  td:nth-of-type(10):before { content: ""; }
+  td:nth-of-type(11):before { content: ""; }
+  td:nth-of-type(12):before { content: ""; }
+  td:nth-of-type(13):before { content: ""; }
+  td:nth-of-type(14):before { content: ""; }
+  td:nth-of-type(15):before { content: ""; }
+  td:nth-of-type(16):before { content: ""; }
+  td:nth-of-type(17):before { content: ""; }
+  td:nth-of-type(18):before { content: ""; }
+  td:nth-of-type(19):before { content: ""; }
+  td:nth-of-type(20):before { content: ""; }
+  td:nth-of-type(21):before { content: ""; }
+  td:nth-of-type(22):before { content: ""; }
+  td:nth-of-type(23):before { content: ""; }
+  td:nth-of-type(24):before { content: "Réf"; }
+  td:nth-of-type(25):before { content: "Description"; }
+  td:nth-of-type(26):before { content: "Quantité"; }
+  td:nth-of-type(27):before { content: "Prix unitaire HT"; }
+  td:nth-of-type(28):before { content: "TVA"; }
+  td:nth-of-type(29):before { content: "Montant HT"; }
+  td:nth-of-type(30):before { content: "Total HT"; }
+  td:nth-of-type(31):before { content: "TVA"; }
+  td:nth-of-type(32):before { content: "Timber fiscal"; }
+  td:nth-of-type(34):before { content: "Total TTC"; }
+  td:nth-of-type(35):before { content: ""; }
+  td:nth-of-type(36):before { content: ""; }
+  td:nth-of-type(37):before { content: ""; }
+  td:nth-of-type(38):before { content: ""; }
+  td:nth-of-type(39):before { content: ""; }
+  td:nth-of-type(40):before { content: ""; }
+  td:nth-of-type(41):before { content: ""; }
+  
+  }
+  

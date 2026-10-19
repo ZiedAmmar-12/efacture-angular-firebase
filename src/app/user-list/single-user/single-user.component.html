@@ -1,0 +1,74 @@
+<div class="row mar">
+  <div class="content mt-4">
+  <div class="col-xs-12 px-4 py-4" style="background-color:rgb(242, 245, 245) ">
+    <h4 class="" >{{'User Details'|translate}}</h4>
+      
+      <tr >
+        
+
+          <div class="form-group">
+            <label for="nomdutilisateur"> <h6>{{'userName'|translate}} : {{ user?.nomdutilisateur }}</h6> </label>
+             
+          </div>
+
+        
+
+          <div class="form-group">
+            <label for="role"> <h6> {{'User Role'|translate}}: <span *ngIf="user?.gid == 22" >Agent facture</span > <span *ngIf="user?.gid == 23" >Manager</span > <span  *ngIf="user?.gid == 24" >Administrateur</span> </h6> </label>
+                
+          </div>
+
+        
+        
+          <div class="form-group">
+            <label for="etat"> <h6>{{'User State'|translate}} : {{ user?.etat }}</h6> </label> 
+            
+          </div>
+
+       
+
+          <div class="form-group">
+            <label for="email"> <h6>{{'Email address'|translate}}: {{ user?.email }}</h6> </label> 
+            
+          </div>
+
+        
+
+          <div class="form-group">
+            <label for="telephone"> <h6>{{'Mobile'|translate}}: {{ user?.telephone }}</h6> </label> 
+            
+          </div>
+
+
+      </tr>
+
+      <br>
+
+      <!--<tr>
+        <h2 class="modal-title">Date</h2>
+
+          <div class="form-group">
+            <label for="datecreation"><h6>Date creation :</h6> </label> 
+            {{ user?.datecreation | date :'dd/MM/YYYY H:m:s' }} 
+          </div>
+
+        <br><hr>
+
+          <div class="form-group">
+            <label for="datemodification"><h6>Date modification :</h6> </label> 
+            {{ user?.datemodification | date :'dd/MM/YYYY H:m:s' }} 
+          </div>
+
+      </tr>
+    -->
+        <br>
+
+
+      <div class="modal-footer"> 
+        <button class="btn btn-primary" (click)="onBack()" >{{'Back'|translate}}</button>
+      </div>  
+  </div>
+  </div>
+</div><br><br><br>
+
+

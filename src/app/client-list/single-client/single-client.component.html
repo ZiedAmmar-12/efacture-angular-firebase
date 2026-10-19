@@ -1,0 +1,81 @@
+<div class="row mar">
+  <div class="content mt-4">
+  <div class="col-xs-12 px-4 py-4" style="background-color:rgb(242, 245, 245) ">
+    <h4 class="mb-0" >{{'Customer'|translate}}</h4>
+      <br>
+      <tr>
+          <div class="form-group ">
+              <label for="nomclient"> <h6>{{'Name client'|translate }} : {{ client?.nomclient }}</h6> </label> 
+              
+          </div>
+
+        
+
+          <div class="form-group ">
+              <label for="telephone"> <h6>{{'phone client'|translate }}: {{ client?.telephone }}</h6> </label> 
+                  
+          </div>
+
+        
+
+          <div class="form-group ">
+              <label for="email"> <h6>{{'Email address'|translate }}: {{ client?.email }}</h6> </label> 
+              
+          </div>
+
+      
+
+          <div class="form-group ">
+              <label for="siren"> <h6> {{'Siren client'|translate}}: {{ client?.siren }}</h6> </label> 
+              
+          </div>
+
+        
+
+          <div class="form-group ">
+            <label for="nomgerant"> <h6>{{'Customer'|translate}} : {{ client?.nomgerant }}</h6> </label> 
+            
+          </div>
+
+        
+
+          <div class="form-group ">
+            <label for="adresse"> <h6>{{'Customer address'|translate}} : {{ client?.adresse }}</h6> </label> 
+            
+          </div>
+
+      </tr>
+
+   
+
+      <tr>
+        <h4 class=" " >{{'Date'|translate}} </h4>
+
+          <div class="form-group ">
+            <label for="datecreation"><h6>{{'Creation Date'|translate}} :</h6> </label> 
+            {{ client?.datecreation | date :'dd/MM/YYYY H:m:s' }} 
+          </div>
+
+      
+
+          <div class="form-group ">
+              <label for="datemodification"><h6>{{'Date Edit'|translate}}:</h6> </label> 
+              {{ client?.datemodification | date :'dd/MM/YYYY H:m:s' }} 
+          </div>
+
+      </tr>
+
+        
+
+        <div class="modal-footer"> 
+
+        <button class="btn btn-primary" (click)="onBack()" >{{'Back'|translate}}</button>
+        
+        </div>
+        <br>
+  </div>
+    
+</div>
+
+
+

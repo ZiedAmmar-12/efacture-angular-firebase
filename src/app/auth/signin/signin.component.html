@@ -1,0 +1,121 @@
+<!--<div class="row">
+  <div class="col-sm-8 col-sm-offset-2" style="margin: auto;">
+
+    <h2> Connexion </h2><hr>
+    <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" id="email" class="form-control" formControlName="email">
+      </div><br>
+      <div class="form-group">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" id="password" class="form-control" formControlName="password">
+      </div>
+      <br>
+      <button class="btn btn-primary" type="submit" [disabled]="signInForm.invalid" > Connexion </button>
+
+      <button id="loginGoogle" type="button" class="other-signup-btn btn-sm btn-light" (click)="SeconnecterwithGoogle()"> 
+        <span class="badge text-white"><i class="fab fa-google text-google" aria-hidden="true" >G</i></span> Google </button>
+      <br>
+
+      <a routerLink="/auth/passwordforget">Password forget</a>
+
+    </form> <br>
+    <p class="text-danger">{{errorMessage}} </p>
+
+  </div>
+</div>
+-->
+<div class="accueil">
+  <div class="row">
+    <div class="col-md-12 col col-sm-4">
+
+    
+  <div class="d-flex">
+    <div class=" division1" >
+      <div class="row  ">
+        <div >
+        <ul class="navbar-nav  selectLang ms-4">
+          <li class="nav-item">
+              
+              <select class="form-select" (change)="ChangeLang($event)" name="" id="">
+                  <option [selected]="lang==='en'" value="en">En</option>
+                  <option [selected]="lang==='fr'" value="fr">Fr</option>
+                  <option [selected]="lang==='ar'" value="ar">Ar</option>
+              </select>
+          </li>
+          </ul>
+         </div>
+        <div class="">
+          <img src="../../../assets/images/connexion.png" class="img-f" alt="Sample image">
+        </div>
+  
+        
+      </div>
+    </div>
+    <div class=" division" >
+      <div class=" bgForm mt-4">
+      <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+       <!-- <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+         
+          
+  
+          <button type="button" class="btn btn-light btn-floating mx-0 " (click)="SeconnecterwithGoogle()">
+            <i class=""><img src="../../assets/images/google.png" alt="google" width="30px" ></i> {{'Sign in with Google'|translate}}
+          </button>
+  
+          
+        </div>
+  
+        <div class="  my-4  ">
+          <p class="text-center fw-bold mx-3 mb-0 "> {{'Or'|translate}}</p>
+        </div>
+  -->
+        <!-- Email input -->
+        <div class="text-center mt-4 pt-2">
+          
+          <span ><a routerLink="/auth/signin" class="btnCnx">{{'Log in'|translate}}</a></span>
+          <span><a routerLink="/auth/signup" class="btnCnx">{{'Register'|translate}}</a></span>
+        </div>
+        
+          <h4 class="bienvenue mt-4">Bienvenue</h4>
+          <p class=" mt-2 pt-1 mb-0 text-center">{{'New Here'|translate}} <a routerLink="/auth/signup" class="link-primary">{{'Create an account'|translate}}</a></p>
+          <div class="form-outline mb-4 mx-4 mt-4">
+          <label class="form-label" for="email">{{'Email address'|translate}}</label>
+          <input type="email" id="email" class="form-control form-control-lg inputcnx"
+            placeholder="{{'Enter a valid email address'|translate}}"  name="email" formControlName="email"/>
+          
+        </div>
+  
+        <!-- Password input -->
+        <div class="form-outline mb-3 mx-4">
+          <label class="form-label" for="password">{{'Password'|translate}}</label>
+          <input type="password" id="password" name="password" class="form-control  inputcnx"
+            placeholder="{{'Enter password'|translate}}"  formControlName="password"/>
+          
+        </div>
+        <p class="text-danger">{{errorMessage}} </p>
+        <div class="display">
+          <!-- Checkbox -->
+         
+          <a routerLink="/auth/passwordforget" class="" style="margin-left: 100px;" >{{'Forgot your password?'|translate}}</a>
+        </div>
+  
+        <div class=" form-outline mb-4 mx-4 mt-4  ">
+          <button  class=" btncnx "type="submit" [disabled]="signInForm.invalid">{{'Log in'|translate}}</button>
+        </div>
+  
+      </form>
+      
+    </div>
+    <div >
+      <h6 class="autre mt-4" style="margin-left: 135px;"  >Autre Forme d'inscription</h6>
+     
+      <div class="imgGmail mt-4"><a (click)="SeconnecterwithGoogle()"><img style="width: 200px;height: px;margin-left: 120px;" src="../../../assets/images/gmail1.png" alt="" ></a>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+  </div>
+  </div>

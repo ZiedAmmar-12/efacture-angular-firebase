@@ -1,0 +1,154 @@
+
+.navbar {
+    padding: 0;
+  }
+  
+  .navbar ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+  
+  .navbar li {
+    position: relative;
+  }
+  
+  a:hover {
+    color: #73c5eb;
+    text-decoration: none;
+    
+  }
+  
+  nav {
+
+  
+  }
+  
+  img {
+    font-size: 60px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background-color: black;
+  }
+  .v{
+   
+    margin-top: 20px;
+    list-style: none;
+    
+  }
+  div ul li {
+    list-style: none;
+    text-decoration: none;
+  }
+  .navbar .navbar-nav me-auto mb-2 mb-lg-0 .nav-item ul {
+    top: 0;
+    left: calc(100% - 30px);
+    visibility: hidden;
+  }
+  
+  .li a {
+    position: relative;
+    color: #73c5eb;
+    text-decoration: none;
+  }
+  .nav-item a{
+    margin-left: 100px;
+  }
+  .h:hover{
+    background-color: rgb(214, 245, 245);
+    color :black
+    
+  }
+  
+  .search {
+    position: relative;
+    width: 400px;
+    margin: 0 200px;
+    
+
+  }
+  
+  .search input {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid rgb(219, 252, 240);
+    background: rgba(235, 240, 244, 1);  
+  }
+  .topbar {
+    min-width: 200px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+
+    border-radius: 5px;
+    margin: 0px;
+    background: rgba(255, 255, 255, 1);
+
+
+  }
+  
+  .img {
+    height: 50px;
+     margin-left: 70px;
+     margin-top: 20px; 
+     width: 70px; 
+     background-color: rgb(245, 248, 248);
+  
+   
+  }
+  .user {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 35%;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .coleur{
+    color: rgb(180, 200, 245);
+  }
+  .user img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: aliceblue;
+  }
+  
+  .photo{
+    background-color: aliceblue;
+    border-radius: 10px;
+    
+   }
+   
+@media (max-width: 480px) {
+  .topbar {
+    width: 100px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+
+    border-radius: 5px;
+    margin: 0px;
+    background: rgba(255, 255, 255, 1);
+
+
+  }
+}

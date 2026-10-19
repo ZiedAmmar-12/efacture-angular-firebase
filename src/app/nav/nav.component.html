@@ -1,0 +1,43 @@
+
+
+    <!-- Navbar Start -->
+    <nav class="topbar">
+        <!--<a href="" class="navbar-brand d-flex d-lg-none me-4">
+            <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
+        </a>
+        <a href="#" class="sidebar-toggler flex-shrink-0">
+            <i class="fa fa-bars"></i>
+        </a>-->
+        <div class="user">
+            <img src="../../assets/images/logo.png" alt="">
+        </div>
+        <h4 class="coleur">az it</h4>
+        <form class="search">
+            <input class="form-control " type="search" placeholder="{{'Search'|translate}}">
+        </form>
+        <div class="navbar-nav align-items-center ms-auto ">
+            
+            
+            <div class="v d-flex   ">
+              <ul>
+                <li>
+                    <a (click)="Sedeconnecter()" *ngIf="isAuth" style="cursor:pointer;" class="btn btn-primary " > {{'Disconnect'|translate}} </a>
+                </li>
+              </ul>
+           
+              <ul class="navbar-nav  selectLang ms-3">
+                <li class="nav-item">
+                    
+                    <select class="form-select" (change)="ChangeLang($event)" name="" id="">
+                        <option [selected]="lang==='en'" value="en">En</option>
+                        <option [selected]="lang==='fr'" value="fr">Fr</option>
+                        <option [selected]="lang==='ar'" value="ar">Ar</option>
+                    </select>
+                </li>
+            </ul>
+                </div>
+            </div>
+       
+    </nav>
+
+

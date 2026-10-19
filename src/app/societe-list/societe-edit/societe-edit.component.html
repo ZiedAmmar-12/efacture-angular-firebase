@@ -1,0 +1,208 @@
+<div class="row mar">
+  <div class="content mt-2 px-4">
+  <div class="col-xs-12">
+      <!--<img style="max-width:400px" *ngIf="societe?.photo" [src]="societe?.photo"> -->
+
+      <h1 class="" >{{'Edit Company'|translate}}</h1>
+      <form class="form-horizontal" [formGroup]="SocieteFormedit" (ngSubmit)="onUpdateSocieteedit(SocieteFormedit)"> 
+
+        <div class="row" >  
+
+              <div class="form-group col-md-4">
+                  <label for="nomsociete"> <h6>{{'Company Name'|translate}} </h6> </label><span class="vnumgf" id="14" aria-label="Question obligatoire" style="color: red;"> *</span> <br>
+                  <input type="text" class="form-control" name="nomsociete" formControlName="nomsociete" value="{{societe?.nomsociete}}" maxlength="50">
+                  <div *ngIf="SocieteFormedit.get('nomsociete')?.touched && SocieteFormedit.get('nomsociete')?.invalid && SocieteFormedit.get('nomsociete')?.errors" class="error">
+                    <span *ngIf="SocieteFormedit.get('nomsociete')?.hasError('required')" class="RHiWt" style="color: red;"> {{'This field is required'|translate}} </span>
+                    <span *ngIf="SocieteFormedit.get('nomsociete')?.hasError('pattern')" class="RHiWt" style="color: red;"> {{'Enter a valid company name'|translate}}</span>
+                  </div>
+              </div>
+
+      
+
+              <div class="form-group col-md-4">
+                  <label for="telephone"> <h6> {{'Company telephone number'|translate}}</h6> </label> <span class="vnumgf" id="15" aria-label="Question obligatoire" style="color: red;"> *</span>
+                  <input type="tel" class="form-control" name="telephone" formControlName="telephone" value="{{societe?.telephone}}" maxlength="14">
+                  <div *ngIf="SocieteFormedit.get('telephone')?.touched && SocieteFormedit.get('telephone')?.invalid && SocieteFormedit.get('telephone')?.errors" class="error">
+                    <span *ngIf="SocieteFormedit.get('telephone')?.hasError('required')" class="RHiWt" style="color: red;">  {{'This field is required'|translate}}</span>
+                    <span *ngIf="SocieteFormedit.get('telephone')?.hasError('pattern')" class="RHiWt" style="color: red;"> {{'Enter a valid phone number (International or local format)'|translate}}</span>
+                  </div>
+              </div>
+
+
+              <div class="form-group col-md-4">
+                  <label for="email"> <h6> {{'Company email'|translate}}</h6> </label><span class="vnumgf" id="16" aria-label="Question obligatoire" style="color: red;"> *</span><br> 
+                  <input type="email" class="form-control" name="email" formControlName="email" value="{{societe?.email}}" maxlength="250">
+                  <div *ngIf="SocieteFormedit.get('email')?.touched && SocieteFormedit.get('email')?.invalid && SocieteFormedit.get('email')?.errors" class="error">
+                    <span *ngIf="SocieteFormedit.get('email')?.hasError('required')"  class="RHiWt" style="color: red;"> {{'This field is required'|translate}}</span>
+                    <span *ngIf="SocieteFormedit.get('email')?.hasError('pattern')"  class="RHiWt" style="color: red;"> Saisissez un email valide {{'Edit Company'|translate}}</span>
+                  </div>
+              </div>
+
+            
+
+              <div class="form-group col-md-4">
+                  <label for="siret"><h6> {{'Siret company'|translate}}</h6> </label> <span class="vnumgf" id="17" aria-label="Question obligatoire" style="color: red;"> *</span>
+                  <input type="text" class="form-control" name="siret" formControlName="siret" value="{{societe?.siret}}" maxlength="14">
+                  <div *ngIf="SocieteFormedit.get('siret')?.touched && SocieteFormedit.get('siret')?.invalid && SocieteFormedit.get('siret')?.errors" class="error">
+                    <span *ngIf="SocieteFormedit.get('siret')?.hasError('required')" class="RHiWt" style="color: red;">  {{'This field is required'|translate}}</span>
+                    <span *ngIf="SocieteFormedit.get('siret')?.hasError('pattern')"  class="RHiWt" style="color: red;"> {{'Enter a valid Company Siret (14 Alphanumeric Character Format)'|translate}} </span>
+                  </div>
+              </div>
+
+           
+
+              <div class="form-group col-md-4">
+                <label for="adresse"><h6>{{'Company address'|translate}} </h6> </label> <span class="vnumgf" id="18" aria-label="Question obligatoire" style="color: red;"> *</span>
+                <input type="text" class="form-control" name="adresse" formControlName="adresse" value="{{societe?.adresse}}" maxlength="200">
+                <div *ngIf="SocieteFormedit.get('adresse')?.touched && SocieteFormedit.get('adresse')?.invalid && SocieteFormedit.get('adresse')?.errors" class="error">
+                  <span *ngIf="SocieteFormedit.get('adresse')?.hasError('required')" class="RHiWt" style="color: red;">  {{'This field is required'|translate}}</span>
+                 </div>
+              </div>
+
+            
+
+              <div class="form-group col-md-4">
+                <label for="codepostale"><h6>{{'Company postal code'|translate}}</h6> </label><span class="vnumgf" id="19" aria-label="Question obligatoire" style="color: red;"> *</span> 
+                <input type="text" class="form-control" name="codepostale" formControlName="codepostale" value="{{societe?.codepostale}}" maxlength="5">
+                <div *ngIf="SocieteFormedit.get('codepostale')?.touched && SocieteFormedit.get('codepostale')?.invalid && SocieteFormedit.get('codepostale')?.errors" class="error">
+                  <span *ngIf="SocieteFormedit.get('codepostale')?.hasError('required')" class="RHiWt" style="color: red;">  {{'This field is required'|translate}}</span>
+                  <span *ngIf="SocieteFormedit.get('codepostale')?.hasError('pattern')"  class="RHiWt" style="color: red;"> {{'Enter a valid postal code'|translate}}</span>
+                </div>
+              </div>
+
+           
+
+              <div class="form-group col-md-4">
+                <label for="pays"><h6> {{'Company country'|translate}}</h6> </label><span class="vnumgf" id="20" aria-label="Question obligatoire" style="color: red;"> *</span> 
+                <input type="text" class="form-control" name="pays" formControlName="pays" value="{{societe?.pays}}" maxlength="20">
+                <div *ngIf="SocieteFormedit.get('pays')?.touched && SocieteFormedit.get('pays')?.invalid && SocieteFormedit.get('pays')?.errors" class="error">
+                  <span *ngIf="SocieteFormedit.get('pays')?.hasError('required')" class="RHiWt" style="color: red;">  {{'This field is required'|translate}}</span>
+                  <span *ngIf="SocieteFormedit.get('pays')?.hasError('pattern')"  class="RHiWt" style="color: red;"> {{'Enter a valid country name'|translate}}</span>
+                </div>
+              </div>
+
+         
+              <div class="form-group col-md-4">
+                <label for="directeur"><h6>{{'Name Company Director'|translate}}</h6></label><span class="vnumgf" id="21" aria-label="Question obligatoire" style="color: red;"> *</span>
+                <input type="text" class="form-control" name="directeur" formControlName="directeur" value="{{societe?.directeur}}" maxlength="35">
+                <div *ngIf="SocieteFormedit.get('directeur')?.touched && SocieteFormedit.get('directeur')?.invalid && SocieteFormedit.get('directeur')?.errors" class="error">
+                  <span *ngIf="SocieteFormedit.get('directeur')?.hasError('required')" class="RHiWt" style="color: red;"> {{'This field is required'|translate}}</span>
+                  <span *ngIf="SocieteFormedit.get('directeur')?.hasError('pattern')"  class="RHiWt" style="color: red;"> {{'Enter Valid Name'|translate}}</span>
+                </div>
+              </div>
+
+           
+
+              <div class="form-group col-md-4">
+                  <label for="siteweb"><h6>{{'Company website'|translate}}</h6></label><span class="vnumgf" id="22" aria-label="Question obligatoire" style="color: red;"> *</span>
+                  <input type="text" class="form-control" name="siteweb" formControlName="siteweb" value="{{societe?.siteweb}}" maxlength="50">
+                  <div *ngIf="SocieteFormedit.get('siteweb')?.touched && SocieteFormedit.get('siteweb')?.invalid && SocieteFormedit.get('siteweb')?.errors" class="error">
+                    <span *ngIf="SocieteFormedit.get('siteweb')?.hasError('required')" class="RHiWt" style="color: red;">  {{'This field is required'|translate}}</span>
+                    <span *ngIf="SocieteFormedit.get('siteweb')?.hasError('pattern')"  class="RHiWt" style="color: red;"> {{'Enter a valid website in the correct format'|translate}}</span>
+                  </div>
+              </div>
+
+           
+
+              <div class="form-group col-md-4">
+                  <label for="type_dev_fac"><h6> {{'Currency Type'|translate}}</h6></label><span class="vnumgf" id="23" aria-label="Question obligatoire" style="color: red;"> *</span>
+                  <select  class="form-control" name="type_dev_fac" formControlName="type_dev_fac" value="{{societe?.type_dev_fac}}">
+                      <option  value="TND">TND</option>
+                      <option value="Euro"> EURO</option>   
+                  </select>
+                  <div *ngIf="SocieteFormedit.get('type_dev_fac')?.touched && SocieteFormedit.get('type_dev_fac')?.invalid && SocieteFormedit.get('type_dev_fac')?.errors" class="error">
+                    <span *ngIf="SocieteFormedit.get('type_dev_fac')?.hasError('required')" class="RHiWt" style="color: red;">  {{'This field is required'|translate}}</span>
+                  </div>
+              </div>
+
+           
+
+              <div class="form-group col-md-4">
+                <label for="etat"><h6> {{'Company State'|translate}}</h6> </label><span class="vnumgf" id="24" aria-label="Question obligatoire" style="color: red;"> *</span>
+                <select name="etat" class="form-control" id="etat" formControlName="etat">
+                    <option [selected]="SocieteFormedit.value.etat == true" value="true">Actif</option> 
+                    <option [selected]="SocieteFormedit.value.etat == false" value="false">Non actif</option>
+                </select>
+              </div>
+              
+
+              <div class="form-group col-md-4">
+                <label for="optiontva"><h6> {{'VAT'|translate}}</h6></label><span class="vnumgf" id="23" aria-label="Question obligatoire" style="color: red;"> *</span>
+                <select  class="form-control" name="optiontva" formControlName="optiontva" value="{{societe?.optiontva}}" >
+                    <option selected value="19">19%</option>
+                    <option value="20">20%</option>   
+                </select>
+                <div *ngIf="SocieteFormedit.get('optiontva')?.touched && SocieteFormedit.get('optiontva')?.invalid && SocieteFormedit.get('optiontva')?.errors" class="error">
+                  <span *ngIf="SocieteFormedit.get('optiontva')?.hasError('required')" class="RHiWt" style="color: red;">  {{'This field is required'|translate}}</span>
+                </div>
+              
+                
+            </div>
+            <div class="form-group col-md-6">
+              <label for="idcategorie"> <h6>{{'Category'|translate}} </h6> </label> 
+              <select  class="form-control" id="idcategorie" formControlName="idcategorie" >
+                  <option *ngFor="let categorie of categoriedata ; let i= index " value="{{categorie.id}}">{{categorie.nomcategorie}}</option>
+              </select>
+            </div>
+             
+              <h4 class=" mt-2">{{'Banking details'|translate}}</h4>
+
+              <div class="form-group col-md-6" >
+                  <label for="nombanque"><h6>{{'Bank name'|translate}} </h6></label><span class="vnumgf" id="25" aria-label="Question obligatoire" style="color: red;"> *</span>
+                  <input type="text" class="form-control" name="nombanque" formControlName="nombanque" value="{{societe?.nombanque}}" maxlength="50">
+                  <div *ngIf="SocieteFormedit.get('nombanque')?.touched && SocieteFormedit.get('nombanque')?.invalid && SocieteFormedit.get('nombanque')?.errors" class="error">
+                    <span *ngIf="SocieteFormedit.get('nombanque')?.hasError('required')" class="RHiWt" style="color: red;">  {{'This field is required'|translate}}</span>
+                    <span *ngIf="SocieteFormedit.get('nombanque')?.hasError('pattern')"  class="RHiWt" style="color: red;"> Saisissez un nom banque valide{{'Edit Company'|translate}}</span>
+                  </div>
+              </div>
+
+           
+              <div class="form-group col-md-6">
+                  <label for="codebanque"><h6>{{'Bank code'|translate}} </h6></label><span class="vnumgf" id="26" aria-label="Question obligatoire" style="color: red;"> *</span>
+                  <input type="text" class="form-control" name="codebanque" formControlName="codebanque" value="{{societe?.codebanque}}" maxlength="4" onkeyup="this.value = this.value.toUpperCase();">
+                  <div *ngIf="SocieteFormedit.get('codebanque')?.touched && SocieteFormedit.get('codebanque')?.invalid && SocieteFormedit.get('codebanque')?.errors" class="error">
+                    <span *ngIf="SocieteFormedit.get('codebanque')?.hasError('required')" class="RHiWt" style="color: red;"> {{'This field is required'|translate}}</span>
+                    <span *ngIf="SocieteFormedit.get('codebanque')?.hasError('pattern')"  class="RHiWt" style="color: red;"> {{'Enter a valid bank code (Format 4 Alphanumeric characters)'|translate}}</span>
+                  </div>
+              </div>
+
+           
+
+              <div class="form-group col-md-6">
+                  <label for="numcompte"><h6> {{'Account number'|translate}}</h6></label><span class="vnumgf" id="27" aria-label="Question obligatoire" style="color: red;"> *</span>
+                  <input type="text" class="form-control" name="numcompte" formControlName="numcompte" value="{{societe?.numcompte}}" maxlength="14">
+                  <div *ngIf="SocieteFormedit.get('numcompte')?.touched && SocieteFormedit.get('numcompte')?.invalid && SocieteFormedit.get('numcompte')?.errors" class="error">
+                    <span *ngIf="SocieteFormedit.get('numcompte')?.hasError('required')" class="RHiWt" style="color: red;"> Ce champ est obligatoire {{'Edit Company'|translate}}</span>
+                    <span *ngIf="SocieteFormedit.get('numcompte')?.hasError('pattern')"  class="RHiWt" style="color: red;"> {{'Enter a valid account number'|translate}}</span>
+                  </div>
+              </div>
+
+        
+
+              <div class="form-group col-md-6">
+                  <label for="swift"><h6>{{'Swift'|translate}} </h6></label><span class="vnumgf" id="28" aria-label="Question obligatoire" style="color: red;"> *</span>
+                  <input type="text" class="form-control" name="swift" formControlName="swift" value="{{societe?.swift}}" maxlength="11" onkeyup="this.value = this.value.toUpperCase();">
+                  <div *ngIf="SocieteFormedit.get('swift')?.touched && SocieteFormedit.get('swift')?.invalid && SocieteFormedit.get('swift')?.errors" class="error">
+                    <span *ngIf="SocieteFormedit.get('swift')?.hasError('required')" class="RHiWt" style="color: red;"> Ce champ est obligatoire {{'Edit Company'|translate}}</span>
+                    <span *ngIf="SocieteFormedit.get('swift')?.hasError('pattern')"  class="RHiWt" style="color: red;"> {{'Enter a valid swift code (Swift 8 or Swift 11 depending on your bank)'|translate}}</span>
+                  </div>
+              </div>
+
+           
+
+            <div class="modal-footer mt-4"> 
+
+                <button class="btn btn-success" type="submit"  [disabled]="SocieteFormedit.invalid" >{{'Update'|translate}}</button>
+                &nbsp;
+                <button class="btn btn-primary" (click)="onBack()" >{{'Back'|translate}}</button>
+
+            </div>  
+            
+         
+            
+        </div>    
+        
+      </form>         
+  </div>
+</div>
+</div>

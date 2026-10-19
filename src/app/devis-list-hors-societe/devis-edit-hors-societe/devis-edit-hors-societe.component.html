@@ -1,0 +1,189 @@
+<div class="row" >
+    <h4 class="mt-4" >{{'Update Estimate'|translate}}</h4>
+    <div class="content ">
+    <div class="col-md-12 "  style="background-color:rgb(246, 248, 248)">
+        <form class="form-horizontal  mt-4" [formGroup]="DevisFormedit" (ngSubmit)="onUpdateDevisedit(DevisFormedit)" *ngIf="this.nomsocietedata?.id"> 
+            <div class="row ">
+                <div class="col-md-6 ">
+
+                   <div class="form-group">
+                        <label for="idsociete"> <h6>{{'Company'|translate}}</h6> </label> 
+                        <input type="hidden" class="form-control" name="idsociete" formControlName="idsociete" value="{{devis?.idsociete}}">
+                         : {{this.nomsocietedata.nomsociete}}
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="idsociete"> <h6>{{'Company'|translate}} </h6> </label> 
+                        <select  class="form-control" id="idsociete" formControlName="idsociete">
+                            <option *ngFor="let societe of societedata ; let i= index " value="{{societe.id}}">{{societe.nomsociete}}</option>
+                        </select>
+                    </div>
+                <br><hr>
+    
+                    <div class="form-group">
+                        <label for="idclient"> <h6>{{'Client'|translate}} </h6> </label> 
+                        <select  class="form-control" id="idclient" formControlName="idclient">
+                            <option *ngFor="let client of clientdata ; let i= index " value="{{client.id}}">{{client.nomclient}}</option>
+                        </select>
+                    </div>
+
+                    <br><hr>
+                    <div class="form-group">
+                        <label for="type_dev_fac"><h6>{{'Type de device de devis Company'|translate}} </h6></label>
+                        <select  class="form-control" class="form-control" id="type_dev_fac" value="{{this.nomsocietedata.id}}" formControlName="type_dev_fac" (change)="selecteoptiontva()">
+                        <option value="{{this.nomsocietedata.type_dev_fac}}">{{this.nomsocietedata.type_dev_fac}}</option>
+                        
+                         </select>
+                    </div>
+    
+                </div>
+                <div class="col-md-6">
+    
+                    <div class="form-group">
+                        <label for="numDevis"> <h6>{{'Estimate number'|translate}}  </h6> </label> : {{this.numdevisdata}}
+                        <input type="hidden" class="form-control" name="numDevis" formControlName="numDevis" value="{{devis?.numDevis}}">
+                    </div>
+    
+                <br><hr>
+
+                    <div class="form-group">
+                        <label for="date_valid_fact"> <h6> {{'Estimate validity date'|translate}} </h6> </label><br> 
+                        <input type="date" class="form-control" name="date_valid_fact" formControlName="date_valid_fact" value="{{devis?.date_valid_fact}}">
+                    </div>
+    
+                <br><hr>
+                <br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                <br>
+                <h4>{{'Additional information'|translate}}</h4>
+                <hr>
+                <div class="col-md-12 text-right">
+                    <button type="button" class="btn btn-primary" (click)="addrefrenceFormGroup()">{{'Add'|translate}}</button>
+                    &nbsp;
+                    <button type="button" class="btn btn-success" (click)="calculertotal()">{{'Calculate'|translate}}</button>
+                </div> <br>  
+
+                <div formArrayName="references">
+
+                    
+                    
+                    <table class="table align-middle mb-0 bg-white">
+                        <thead class="bg-light">
+                        <tr>
+                            <th>{{'Ref'|translate}}</th>
+                            <th>{{'Description'|translate}}</th>
+                            <th>{{'Quantity'|translate}}</th>
+                            <th>{{'Unit Price HT'|translate}}</th>
+                            <th>{{'Amount excluding tax'|translate}}</th>
+                            <th>{{'Action'|translate}}</th>
+                        </tr>
+                      
+                        </thead>
+                        <tbody>
+                        <ng-container *ngFor="let refrenceform of referencesforms.controls let i = index;" >
+                        <tr [formGroupName]="i">    
+    
+                            <td> 
+                                {{i+1}}
+                                <input type="hidden" class="form-control" [id]="'refid' + i" [value]="i+1" formControlName="refid">
+                            </td>
+                            
+                            <td>
+                                <input type="textarea" class="form-control" [id]="'description' + i" formControlName="description">
+                            </td>
+                            
+                            <td> 
+                                <input type="number" class="form-control" [id]="'quantite' + i" formControlName="quantite">
+                            </td>
+                            
+                            <td> 
+                                <input type="number" class="form-control" [id]="'prix_unitaire_HT' + i" formControlName="prix_unitaire_HT">
+                            </td>
+                            <td> 
+                                <input type="number" class="form-control" [id]="'montant_HT' + i"  formControlName="montant_HT">
+                            </td>
+                            <td>
+                                <button *ngIf="i !=0"
+                                class="btn btn-danger mt-4"
+                                type="button"
+                                (click)="deletereferenceFormGroup(i)"
+                              >
+                              {{'Delete'|translate}}
+                              </button>
+                            </td>
+                        </tr>
+                        </ng-container>
+                        </tbody>
+                    </table>
+                    
+                </div>
+                
+
+                <table class="table align-middle mb-0 bg-white">
+                    <tbody>
+                    <tr>
+                        <td colspan="3"></td>
+                        <th>{{'Total HT'|translate}}</th>
+                        <td> 
+                            <input type="number" class="form-control" id="totalht" name="totalht" value="{{devis?.totalht}}" formControlName="totalht">
+                        </td>
+                      
+                    </tr>
+                    <tr>
+                        <th ></th>
+                        <th>{{'VAT option'|translate}} </th>
+                        <td> 
+                           
+                 
+                    <select  class="form-control" class="form-control" id="optiontva" value="{{this.nomsocietedata.id}}" formControlName="optiontva" (change)="selecteoptiontva()">
+                        <option value="{{this.nomsocietedata.optiontva}}">{{this.nomsocietedata.optiontva}}%</option>
+                        
+                    </select>
+
+                        </td>
+                        <th >{{'VAT'|translate}}</th>
+                        <td> 
+                            <input type="number" class="form-control" id="tva" value="{{devis?.tva}}"  formControlName="tva">
+                        </td>
+                       
+                    </tr>
+                    <tr *ngIf="this.typedevfac =='TND'">
+                        <th colspan="3"></th>
+                        <th>{{'Tax stamp'|translate}}</th>
+                        <td>
+                            <input type="number" class="form-control" id="timbrefiscal"  value="{{devis?.timbrefiscal}}" formControlName="timbrefiscal">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="3"></th>
+                        <th>{{'Total Price'|translate}}</th>
+                        <td> 
+                            <input type="number" class="form-control" id="totalttc" value="{{devis?.totalttc}}" formControlName="totalttc">
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <br>
+                
+                <div class="modal-footer"> 
+  
+                    <button class="btn btn-success" type="submit" [disabled]="DevisFormedit.invalid" >{{'Update'|translate}}</button>
+                    &nbsp;
+                    <button class="btn btn-primary" (click)="onBack()" >{{'Back'|translate}}</button>
+    
+                </div>  
+                <br>
+                </div>
+            </div>
+            <br><br>
+            <input type="hidden" class="form-control" id="timbrefiscal" *ngIf="this.typedevfac=='Euro'|| this.typedevfac==''" formControlName="timbrefiscal" value="0">
+        </form>
+                     
+    </div>
+    </div>
+  </div>
+  <br><br>
+  

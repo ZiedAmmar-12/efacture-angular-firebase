@@ -1,0 +1,49 @@
+input{
+  width: 70%;
+}
+
+select{
+  width: 70%;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+font-family: "Jost", sans-serif;
+}
+
+label{
+padding-left: 10px;
+}
+.mar{
+  margin: 50px;
+}
+div .form-group {
+padding-left: 20px;
+padding-top: 10px;
+}
+
+div .modal-footer {
+padding-right: 20px;
+padding-bottom: 10px;
+}
+
+/*div .modal-title {
+padding-left: 20px;
+padding-top: 10px;
+font-size: 30px;
+font-family:fantasy;
+}
+*/
+div .md0UAd{
+  padding-left: 20px;
+  padding-top: 10px;
+}
+.modal-title{ 
+
+  background-color:rgb(242, 245, 245)
+}

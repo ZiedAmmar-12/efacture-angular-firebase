@@ -1,0 +1,185 @@
+<div class="row mar"  id="content" #content id="contentToConvert"  id="your-table-id" >
+    <div class="marg   mWidth  mt-4 ">
+        
+          <div class="row ">
+            <table>
+              <tr>
+                <td class=" col-sm-8 col-md-8 col-xl-8 color  ">Devis N°:{{devis?.numDevis}}</td>
+                <td class="col-sm-4 col-md-4 col-xl-4 text-right"><img
+                  src="data:image/jpeg;base64,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"
+                  alt="logo-azit"
+                  width="100px"/></td>
+              </tr>
+            </table>
+            
+        
+          </div>
+          <div >
+            <table class=""style="width: 300px;">
+              <tr class="col-sm-12 col-md-12 col-xl-12">
+                <td class="color " >
+                  {{nomsocietedata.nomsociete }} S.A.R.L</td></tr>
+                  <tr><td>{{nomsocietedata?.adresse}}</td></tr>
+                  <tr><td colspan="2">{{nomsocietedata?.codepostale}}</td></tr>
+                  <tr><td >Téléphone:{{nomsocietedata?.telephone}}</td> 
+                   </tr>
+              
+            </table>
+            <!--
+            <div class="color " >
+               AZ IT S.A.R.L <br />
+            </div>
+               Cyber Parc Regional<br>
+               4137 Zerzis Tunisie<br />
+               Téléphone:26 676 435 <br />
+          </div>-->
+          <div class="row mt-2">
+          <table class="bgcolor col-sm-9 col-md-9 col-xl-9">
+            <tr><td colspan="2">Date du devis:</td>
+                <td colspan="2">{{ devis?.datecreation | date : "dd/MM/YYYY" }}</td>
+            </tr>
+            <tr><td colspan="2">Référence du devis:</td>
+                <td colspan="2">{{ devis?.numDevis }}</td>
+            </tr>
+            <tr><td colspan="2">Date validité devis :</td>
+                <td colspan="2"> {{ devis?.date_valid_fact }}</td>
+            </tr>
+            <tr><td colspan="2">Nom Client:</td>
+                <td colspan="2">{{ nomclientdata.nomclient }}</td>
+            </tr>
+            <tr><td colspan="2">E-mail Client:</td>
+                <td colspan="2">{{ nomclientdata.email }}</td>
+            </tr>
+            <tr><td colspan="2">Contact Client:</td> 
+                <td colspan="2">{{ nomclientdata.telephone }}</td>
+            </tr>
+          </table>
+       
+          <div  class="col-sm-2 col-md-2 col-xl-2  ">
+          <table >
+            <tr><td class="">Destinataire</td></tr>
+            <tr><td class="cl"  >{{ nomclientdata.nomclient }}</td></tr>
+            <tr><td class="cl" >{{ nomclientdata.adresse }}</td></tr>
+          </table>
+          </div>
+      </div>
+        <table class="mt-2">
+          
+          <tr><td>Information additionnelles</td></tr>
+          <tr><td style="width:300px">Service après-vente - Garantie : 1 an</td></tr>
+        </table>
+        <div class="container  mt-4 h"> 
+          <table class="table table-bordered table-hover  " >
+            <thead class="thead-dark">
+            <tr>
+            <th scope="col">Réf</th>
+            <th colspan="2">Description</th>
+            <th scope="col" >Quantité</th>
+            <th colspan="2">Prix unitaire HT</th>
+            <th scope="col">TVA</th>
+            <th colspan="2">Montant HT</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let refrenceDevis of devis.references; let i = index">
+                <td >
+                  {{ refrenceDevis?.refid }}
+                </td>
+  
+                <td colspan="2">
+                  
+                    {{ refrenceDevis?.description }}
+                 
+                </td>
+                <td >
+                  {{ refrenceDevis?.quantite }} 
+               </td>
+                <td colspan="2">
+                  
+                  {{ refrenceDevis?.prix_unitaire_HT }}
+               
+                </td>
+               
+  
+                <td>
+                  
+                    {{ devis?.optiontva }}%
+                 
+                </td>
+                
+               
+                <td colspan="2">
+                  
+                    {{ refrenceDevis?.montant_HT }}{{devis?.type_dev_fac}}
+                 
+                </td>
+              </tr>
+            
+            </tbody>
+            <tfoot class="">
+              <tr>
+                <th colspan="6" class="text-right">Total HT</th>
+                <td  colspan="3"class="text-right"> {{ devis?.totalht }}{{devis?.type_dev_fac}}</td>
+              </tr>
+              <tr>
+                <th colspan="6" class="text-right">TVA</th>
+                
+                <td colspan="3" class="text-right"> {{ devis?.tva }} </td>
+              </tr>
+              <tr>
+                <th colspan="6" class="text-right">Timbre fiscal</th>
+                
+                <td colspan="3" class="text-right">{{ devis?.timbrefiscal }} </td>
+              </tr>
+              <tr>
+                <th colspan="6" class="text-right">Total TTC</th>
+                
+                <td colspan="3" class="text-right">{{ devis?.totalttc }}{{devis?.type_dev_fac}}</td>
+              </tr>
+            </tfoot>
+          </table>
+        
+        
+      </div>
+        
+        
+     <br>
+  
+  
+  <table class="tab">
+    <tr >
+      
+      <td colspan="3"> Cyber Park Regional</td>
+      <td colspan="3"> AZ IT S.A.R.L </td>
+      <td colspan="3">Banque:  Attijari Bank</td>
+    </tr>
+    <tr >
+      
+      <td colspan="3"> 4137 Zarzis</td>
+      <td colspan="3">Téléphone: 26 676 435</td>
+      <td colspan="3"> Code banque:  TN59</td>
+    </tr>
+    <tr >
+      
+      <td colspan="3"> Tunisie</td>
+      <td colspan="3"> Email: azit.contact@azit.fr</td>
+      <td colspan="3">N° de compte:  40830064589443</td>
+    </tr>
+    <tr>
+      
+      <td colspan="3"> N° Siren ou Siret : 16231512</td>
+      <td colspan="3"><a href="https://azit.fr/">www.azit.fr</a></td>
+      <td colspan="3">SWIFT : BSTUTNTT</td>
+    </tr>
+  </table>
+  
+     
+    </div>
+  </div>
+  </div>
+     <div class="button-container">
+        <button class="btn btn-primary mar" (click)="onBack()">Retour</button>
+        <button class="btn btn-primary mar " (click)="makePdf()">Export PDF</button>
+        <button class="btn btn-primary btn-xs mar" (click)="transformHTMLToExcel()">{{'Export to Excel'|translate}}</button>  
+      </div>
+  

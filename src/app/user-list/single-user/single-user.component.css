@@ -1,0 +1,32 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Jost", sans-serif;
+  font-size:large;
+}
+.mar{
+  margin: 50px;
+}
+label{
+  padding-left: 10px;
+}
+
+
+div .form-group {
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+div .modal-footer {
+  padding-right: 20px;
+  padding-bottom: 10px;
+}
+
+div .modal-title {
+  padding-top: 10px;
+  font-size: 20px;
+  font-family:'Times New Roman', Times, serif;
+}

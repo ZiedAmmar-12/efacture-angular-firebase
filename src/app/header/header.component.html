@@ -1,0 +1,199 @@
+
+<div class="container-fluid  details p-0 d-flex  bg ">
+  <div id="bdSidebar" class="d-flex flex-column flex-shrink-0 p-3  recentOrders offcanvas-md offcanvas-start" style="width: 280px;">
+   <!-- <a class="navbar-brand  br img mt-2 mt-lg-0">
+      <img
+        src="../../assets/images/logo.png "
+    
+        alt="azIT Logo"
+        
+        loading="lazy"
+      />
+      <br>
+    </a>
+      <hr>-->
+      <ul class="mynav  nav-pills flex-column mb-auto px-4 ">
+        <li class="nav-item mb-1  ">
+          <a  routerLink="users" class="nav-item nav-link  "><i class="fa fa-th-large me-2 bg-white"></i>{{'Dashbord'|translate}} </a>
+        </li>
+          <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+              <i class="fa fa-briefcase me-2" style="color: rgb(9, 118, 243);"></i><span style="color: rgb(102, 173, 240);">Mes Outils<i class="fa fa-chevron-down ms-4" aria-hidden="true"></i> </span>
+            </a>
+            <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+             
+              
+              <li class="nav-item  l mb-1">
+                <a  routerLink="users"  routerLinkActive="active" class="nav-item nav-link ">{{'User'|translate}}</a>
+              </li>
+              <li class="nav-item l mb-1">
+                <a  routerLink="clients" routerLinkActive="active" class="nav-item nav-link">{{'Clients'|translate}}</a>
+              </li>
+              <li class="nav-item l mb-1">
+                <a  routerLink="categories" routerLinkActive="active" class="nav-item nav-link">{{'Category'|translate}}</a>
+              </li>
+              <li class="nav-item l mb-1">
+                <a  routerLink="societes" routerLinkActive="active" class="nav-item nav-link">{{'Companies'|translate}}</a>
+              </li>
+              <li class="nav-item l mb-1">
+                <a  routerLink="factures"routerLinkActive="active" class="nav-item nav-link">{{'Invoices'|translate}}</a>
+              </li>
+              <!--<li class="nav-item mb-1">
+                <a  routerLink="devis" class="nav-item nav-link"><i class="fa fa-solid fa-file me-2"></i>{{'Estimate'|translate}}</a>
+              </li>-->
+              <li class="nav-item l mb-1">
+                <a  routerLink="devish" routerLinkActive="active" class="nav-item nav-link">{{'Estimate'|translate}}</a>
+              </li>
+             <!-- <li class="nav-item  l mb-1">
+                <a  routerLink="prespectives" routerLinkActive="active" class="nav-item nav-link">{{'Prespactive'|translate}}</a>
+              </li>-->
+              <li class="nav-item  l mb-1">
+                <a  routerLink="prestations" routerLinkActive="active" class="nav-item nav-link">{{'Prestations'|translate}}</a>
+              </li>
+            </ul>
+          </li><!-- End Forms Nav -->
+      </ul>
+      
+      
+  </div>
+
+  <div class="flex-fill">
+    <div class="p-2 d-md-none d-flex text-white bg-primary">
+        <a href="#" class="text-white mt-3" data-bs-toggle="offcanvas" data-bs-target="#bdSidebar">
+          <i class="fa fa-bars baricon" ></i>
+            
+        </a>
+        <span class="ms-3"><img
+            src="../../assets/images/logo.png "
+        
+            alt="azIT Logo"
+            
+            loading="lazy"
+          /></span>
+          <span>AZ IT</span>
+        
+      <!--  <ul class="navbar-nav  selectLang   ">
+          <li class="nav-item">
+              
+              <select class="form-select" (change)="ChangeLang($event)" name="" id="">
+                  <option [selected]="lang==='en'" value="en">En</option>
+                  <option [selected]="lang==='fr'" value="fr">Fr</option>
+                  <option [selected]="lang==='ar'" value="ar">Ar</option>
+              </select>
+          </li>
+      </ul>-->
+    </div>
+ 
+    
+</div>
+  
+</div>
+        <!-- Sidebar Start 
+        <div class="sidebar ">
+          
+          <nav class="navbar navbar-light">
+            
+            <a class="navbar-brand mt-2 mt-lg-0">
+              <img
+                src="../../assets/images/logo.png "
+            
+                alt="azIT Logo"
+                
+                loading="lazy"
+              />
+              <br>
+            </a>
+        
+             
+              <div class="navbar-nav mt-4 px-4 ">
+                  <a  routerLink="users" class="nav-item nav-link active"><i class="fa fa-user me-2"></i>Dashboard</a>
+                  <a  routerLink="users" class="nav-item nav-link"><i class="fa fa-user me-2"></i>Utilisateurs</a>
+                  <a  routerLink="clients" class="nav-item nav-link"><i class="fa fa-solid fa-users me-2"></i>Clients</a>
+                  <a  routerLink="societes" class="nav-item nav-link"><i class="fa fa-solid fa-building me-2"></i>Sociétes</a>
+                  <a  routerLink="factures" class="nav-item nav-link"><i class="fa fa-solid fa-file me-2"></i>Factures</a>
+                  <a  routerLink="devis" class="nav-item nav-link"><i class="fa fa-solid fa-file me-2"></i>Devis</a>
+                 
+              </div>
+             
+          </nav>
+      </div>
+
+       <!-- Content Start 
+       <div class="content">
+        <!-- Navbar Start 
+        <nav class="navbar navbar-expand bg-light navbar-light sticky-top mt-0 px-4 py-0">
+            <a href="" class="navbar-brand d-flex d-lg-none me-4">
+                <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
+            </a>
+            <a href="#" class="sidebar-toggler flex-shrink-0">
+                <i class="fa fa-bars"></i>
+            </a>
+            <form class="d-none d-md-flex ms-4">
+                <input class="form-control border-0" type="search" placeholder="Search">
+            </form>
+            <div class="navbar-nav align-items-center ms-auto">
+                
+                
+                <div class="nav-item dropdown">
+                  <ul>
+                    <li>
+                        <a (click)="Sedeconnecter()" *ngIf="isAuth" style="cursor:pointer;" class="h" > Déconnexion </a>
+                    </li>
+                  </ul>
+                    </div>
+                </div>
+           
+        </nav>
+        </div>-->
+
+
+        <!-- Navbar End -->
+
+      <!--
+<div class="container">
+  <!-- Content here 
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+
+  <div class="container-fluid">
+  
+      <a class="navbar-brand mt-2 mt-lg-0">
+          <img
+            src="../../assets/images/logo.png "
+            style="height: 70px; width: 70px; background-color: rgb(245, 248, 248);"
+            alt="azIT Logo"
+            loading="lazy"
+          />
+        </a>
+        
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="isAuth" >
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" href="#1-utilisateurs" routerLink="users">Utilisateurs</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" href="#2-clients" routerLink="clients">Clients</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" href="#3-societes" routerLink="societes">Sociétés</a>
+          </li>
+          
+        </ul>
+  
+       
+      
+          
+          <ul class="nav navbar-nav navbar-right">
+             <!-- <div class="d-flex align-items-center" routerLinkActive="active" *ngIf="!isAuth"> 
+                  <button class="btn btn-primary me-3" routerLink="auth/signup" >Créer un compte  </button>
+              </div>
+              <div class="d-flex align-items-center" routerLinkActive="active" *ngIf="!isAuth"> 
+                  <button class="btn btn-link px-3 me-2" routerLink="auth/signin"> Connexion</button>
+              </div>-->
+             <!-- <li>
+                  <a (click)="Sedeconnecter()" *ngIf="isAuth" style="cursor:pointer;"  > Déconnexion </a>
+              </li>
+          </ul>
+  </div>
+      
+  </nav>
+</div>-->

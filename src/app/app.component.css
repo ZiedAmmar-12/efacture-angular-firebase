@@ -1,0 +1,15 @@
+.bg{
+    background: rgba(235, 240, 244, 1);  
+    height: 1688px;
+}
+.header{
+    width: 150px;
+  height: 908px;
+}
+.outlet{
+    width: 1066px;
+    height: 1588px;
+    margin-left: 50px;
+    background: rgba(235, 240, 244, 1);  
+}
+

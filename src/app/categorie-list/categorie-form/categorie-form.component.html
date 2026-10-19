@@ -1,0 +1,38 @@
+<div class="row mar">
+    <div class="content mt-2 px-4">
+    <div class="col-sm-12 col-sm-offset-2   ">
+        <h4 class="" >{{'Register New Category'|translate}}</h4>
+        <form class="form-horizontal bord"  [formGroup]="CategorieForm" (ngSubmit)="onSaveCategorie()"> 
+            <div class="row" >  
+
+            <div class="md0UAd modal-title" aria-hidden="true" dir="auto" style=" color: red;" >*{{'Required'|translate}}</div>
+
+           
+                <div class="form-group col-md-6">
+                    <label for="nomcategorie"><h6>{{'Name Category'|translate}}</h6></label> <span class="vnumgf" id="9" aria-label="Question obligatoire" style="color: red;"> *</span>
+                    <input type="text" class="form-control" id="nomcategorie" formControlName="nomcategorie" maxlength="35">
+                    <div *ngIf="nomcategorie?.touched && nomcategorie?.invalid&& nomcategorie?.errors " class="error">
+                        <span *ngIf="nomcategorie?.hasError('required')" class="RHiWt" style="color: red;">  {{'This field is required'|translate}}</span>
+                        <span *ngIf="nomcategorie?.hasError('pattern')" class="RHiWt" style="color: red;"> {{'The username must be alphabet only and contain 3 to 35 characters'|translate}} </span>
+                    </div>
+                </div>
+                
+           
+                <br>
+                
+                <div class="modal-footer"> 
+                    <button class="btn btn-success" 
+                            [disabled]="CategorieForm.invalid || fileIsUploading"
+                            type="submit">{{'Save'|translate}}</button>  
+                    &nbsp;
+                    <button class="btn btn-primary" (click)="onBack()" >{{'Back'|translate}}</button>
+                </div>
+                <br>
+            
+            <br><br>
+            </div>
+        </form>
+    </div>
+    </div>
+
+</div>

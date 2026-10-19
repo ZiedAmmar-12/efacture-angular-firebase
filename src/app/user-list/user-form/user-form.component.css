@@ -1,0 +1,61 @@
+input{
+  width: 70%;
+  background-color: rgb(236, 234, 234);
+}
+
+
+select{
+  width: 70%;
+  background-color: rgb(236, 234, 234);
+}
+.mar{
+  margin: 50px;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+font-family: "Jost", sans-serif;
+}
+
+label{
+padding-left: 10px;
+}
+.content{
+
+}
+
+div .form-group {
+padding-left: 10px;
+padding-top: 10px;
+
+}
+
+div .modal-footer {
+padding-right: 20px;
+padding-bottom: 10px;
+}
+
+div .modal-title {
+padding-left: 20px;
+padding-top: 10px;
+font-size: 30px;
+font-family:'Times New Roman', Times, serif;
+}
+
+div .md0UAd{
+  padding-left: 10px;
+  padding-top: 10px;
+}
+.formT{
+  width: 100%;
+ margin-left: auto;
+ background-color:rgb(246, 248, 248)
+}
+.inputcnx{
+  background-color: rgb(236, 234, 234);
+}

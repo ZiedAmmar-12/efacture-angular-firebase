@@ -1,0 +1,415 @@
+
+/* ======================= Cards ====================== */
+.cardBox {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+}
+.tab{
+  background-color: white;
+}
+.tab{
+  background-color: white;
+  width: 1072px;
+  gap: 3px;
+  opacity: 0px;
+  background: rgba(255, 255, 255, 1);
+
+
+
+}
+.cardBox .card {
+  position: relative;
+  background: var(--white);
+  padding: 30px;
+  width: 295px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  background-color: white;
+}
+
+.cardBox .card .numbers {
+  position: relative;
+  font-weight: 500;
+  font-size: 2.5rem;
+  color: var(--blue);
+}
+
+.cardBox .card .cardName {
+  color: var(--black2);
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+
+.cardBox .card .iconBx {
+  font-size: 3.5rem;
+  color: var(--black2);
+}
+
+.cardBox .card:hover {
+  background: var(--blue);
+}
+.cardBox .card:hover .numbers,
+.cardBox .card:hover .cardName,
+.cardBox .card:hover .iconBx {
+  color: var(--white);
+}
+.b{
+  border-radius: 10px;
+}
+/*                           end                                        */
+* {
+  box-sizing: border-box;
+}
+
+/* Style the search field */
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 12px;
+  border: 1px solid grey;
+  float: left;
+  width: 40%;
+  background: #f1f1f1;
+}
+
+/* Clear floats */
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+form{
+  padding-left: 20px;
+}
+ div .col-md-12{
+  padding-left: 20px;
+ }
+
+ a:hover {
+  color: #73c5eb;
+  text-decoration: none;
+}
+
+.pos{
+ margin-top: 2%;
+ margin: 170px;
+  
+  
+}
+.size{
+  
+}
+
+
+.details {
+  
+  width: 900px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 30px;
+  margin-left: 0px;
+  background: rgba(235, 240, 244, 1);  
+  /* margin-top: 10px; */
+}
+
+.details .recentOrders {
+  position: relative;
+  display: grid;
+  
+  height: 700px;
+  background: var(--white);
+  padding: 20px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+}
+.details .cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.search {
+  position: relative;
+  width: 400px;
+  
+  
+
+}
+.search input {
+  width: 100%;
+  height: 40px;
+  border-radius: 40px;
+  padding: 5px 20px;
+  padding-left: 35px;
+  font-size: 18px;
+  outline: none;
+  border: 1px solid rgb(36, 49, 235);
+}
+.accueil{
+  width: 900px;
+  height: 1000px;
+  margin-left: 0px;
+  border-radius: 20px 0px -20px 0px;
+  background: rgba(235, 240, 244, 1);  
+}
+
+
+
+/* ======================= Cards ====================== */
+.cardBox {
+    
+  width:950px;
+  height: 160px;
+  padding: 20px;
+  margin: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+}
+.t{
+text-decoration-style: none;
+text-transform: capitalize;
+}
+.tab{
+  background-color: white;
+  width: 1002px;
+  margin: 20px;
+
+ 
+  
+  gap: 3px;
+  opacity: 0px;
+  background: rgba(255, 255, 255, 1);
+
+
+
+}
+.cardBox .card {
+  position: relative;
+  background: var(--white);
+  padding: 16px 24px 16px 24px;
+  width: 322px;
+  height: 160px;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.1);
+
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+  
+  border-radius:8px;
+  
+}
+
+.cardBox .card .numbers {
+  position: relative;
+  font-weight: 500;
+  font-size: 2.5rem;
+  color: var(--blue);
+}
+
+.cardBox .card .cardName {
+  color: var(--black2);
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+
+.cardBox .card .iconBx {
+  font-size: 3.5rem;
+  color: var(--black2);
+}
+
+.cardBox .card:hover {
+  background: var(--blue);
+}
+.cardBox .card:hover .numbers,
+.cardBox .card:hover .cardName,
+.cardBox .card:hover .iconBx {
+  color: var(--white);
+}
+.b{
+  border-radius: 10px;
+}
+.content{
+width: 1440px;
+height: 1216px;
+top: -724px;
+left: 12px;
+gap: 0px;
+border-radius: 20px 0px 0px 0px;
+opacity: 0px;
+
+}
+
+/* ================== Order Details List ============== */
+
+.details {
+  position: relative;
+  width: 900px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 30px;
+  margin-left: 0px;
+  background: rgba(235, 240, 244, 1);  
+  /* margin-top: 10px; */
+}
+
+.inputcnx{
+  background-color:  rgb(180, 178, 178,1)
+}
+.details .recentOrders {
+  position: relative;
+  display: grid;
+  
+  height: 500px;
+  background: var(--white);
+
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+}
+
+.details .cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.cardHeader h2 {
+  font-weight: 600;
+  color: var(--blue);
+}
+.cardHeader .btn {
+
+ 
+}
+
+.details table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+.details table thead td {
+  font-weight: 600;
+}
+.details .recentOrders table tr {
+  color: var(--black1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.details .recentOrders table tr:last-child {
+  border-bottom: none;
+}
+.details .recentOrders table tr:first-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.details .recentOrders table tbody tr:hover {
+  background: var(--blue);
+  color: var(--white);
+}
+.details .recentOrders table tr td {
+  padding: 10px;
+  
+}
+
+.details .recentOrders table tr td:last-child {
+  text-align: start;
+}
+.details .recentOrders table tr td:nth-child(1) {
+  text-align: start;
+}
+.details .recentOrders table tr th:nth-child(2) {
+  text-align:start;
+}
+.details .recentOrders table tr td:nth-child(3) {
+  text-align: start;
+}
+
+
+
+.color{
+  color: black;
+}
+.search {
+  position: relative;
+  width: 400px;
+  
+  
+
+}
+.search input {
+  width: 100%;
+  height: 40px;
+  border-radius: 40px;
+  padding: 5px 20px;
+  padding-left: 35px;
+  font-size: 18px;
+  outline: none;
+  border: 1px solid rgb(24, 197, 240);
+}
+
+.accueil{
+  width: 900px;
+  height: 1000px;
+  margin-left: 0px;
+  border-radius: 20px 0px -20px 0px;
+  background: rgba(235, 240, 244, 1);  
+}
+
+/* ====================== Responsive Design ========================== */
+@media (max-width: 991px) {
+  .cardBox {
+    
+    width:400px;
+    height: 160px;
+    padding: 20px;
+    margin: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+  }
+  .t{
+  text-decoration-style: none;
+  text-transform: capitalize;
+  }
+  .tab{
+    background-color: white;
+    width: 1002px;
+    margin: 20px;
+  
+   
+    
+    gap: 3px;
+    opacity: 0px;
+    background: rgba(255, 255, 255, 1);
+  
+  
+  
+  }
+  .cardBox .card {
+    position: relative;
+    background: var(--white);
+    padding: 16px 24px 16px 24px;
+    width: 322px;
+    height: 160px;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 1px 2px -1px rgba(0, 0, 0, 0.1);
+  
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+    
+    border-radius:8px;
+    
+  }
+}
+
+@media (max-width: 768px) {
+ 
+}
+
+@media (max-width: 480px) {
+
+}

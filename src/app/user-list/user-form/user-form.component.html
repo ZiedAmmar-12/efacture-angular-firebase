@@ -1,0 +1,83 @@
+<div class="row mar">
+    <div class="content mt-2 px-4 ">
+    <div class="col-sm-12 col-sm-offset-2 ">
+        <h4 class="" style="background-color:rgb(212, 249, 250) mb-0">{{'Register a new user'|translate}}</h4>
+        <form class="form-horizontal" [formGroup]="UserForm" (ngSubmit)="onSaveUser()"> 
+
+            
+           
+            <div class="row" style="background-color: rgba(235, 240, 244, 1);   " >  
+                <div class="md0UAd" aria-hidden="true"  style=" color: red;" >* : {{'Required'|translate}}</div>
+                <div class="form-group col-md-6 ">
+                    <label for="nomdutilisateur"><h6> {{'userName'|translate}}</h6></label> <span class="vnumgf" id="4" aria-label="Question obligatoire" style="color: red;"> *</span>
+                    <input type="text" class="form-control "  id="nomdutilisateur" formControlName="nomdutilisateur" maxlength="35">
+                    <div *ngIf="nomdutilisateur?.touched && nomdutilisateur?.invalid && nomdutilisateur?.errors " class="error">
+                        <span *ngIf="nomdutilisateur?.hasError('required')" class="RHiWt" style="color: red;">  {{'This field is required'|translate}}</span>
+                        <span *ngIf="nomdutilisateur?.hasError('pattern')" class="RHiWt" style="color: red;"> {{'The username must be alphabet only and contain 3 to 35 characters'|translate}}</span>
+                    </div>
+                </div>
+             
+                <div class="form-group col-md-6">
+                    <label for="gid"><h6> {{'User Role'|translate}}</h6></label> <span class="vnumgf" id="5" aria-label="Question obligatoire" style="color: red;"> *</span>
+                    <select  class="form-control " id="gid" formControlName="gid">
+                        <option value="22">Agent Facture</option>
+                        <option value="23">Manager Facture</option>
+                        <option value="24">Administarteur</option>
+                    </select>
+                    <div *ngIf="gid?.touched && gid?.invalid" class="error">
+                        <span class="RHiWt" style="color: red;"> {{'This field is required'|translate}} </span>
+                    </div>
+                </div>
+                
+                <div class="form-group col-md-6">
+                    <label for="email"><h6> {{'Email address'|translate}}</h6></label> <span class="vnumgf" id="6" aria-label="Question obligatoire" style="color: red;"> *</span>
+                    <input type="email" class="form-control " id="email" formControlName="email"> 
+                    <div *ngIf="email?.touched && email?.invalid && email?.errors" class="error">
+                        <span *ngIf="email?.hasError('required')" class="RHiWt" style="color: red;"> {{'This field is required'|translate}}</span>
+                        <span *ngIf="email?.hasError('pattern')" class="RHiWt" style="color: red;">{{'Enter Email address'|translate}}</span>
+                    </div>
+                </div>
+               
+                <div class="form-group col-md-6">
+                    <label for="etat"><h6>{{'User State'|translate}} </h6></label> <span class="vnumgf" id="7" aria-label="Question obligatoire" style="color: red;"> *</span>
+                    <select class="form-control " id="etat"  formControlName="etat">
+                        <option value="true">Actif</option>
+                        <option value="false">Non actif</option>
+                        
+                    </select>
+                </div>
+             
+                <div class="form-group col-md-6">
+                    <label for="telephone"><h6>{{ 'Mobile' | translate }}</h6></label>
+                    <span class="vnumgf" id="8" aria-label="Question obligatoire" style="color: red;"> *</span>
+                    <input type="tel" name="telephone" class="form-control" id="telephone" formControlName="telephone" maxlength="10" pattern="^(?:\+?(216|33))?\d{8}$">
+                    <div *ngIf="telephone?.touched && telephone?.invalid && telephone?.errors" class="error">
+                      <span *ngIf="telephone?.hasError('required')" style="color: red;">{{ 'This field is required' | translate }}</span>
+                      <span *ngIf="telephone?.hasError('maxlength')" style="color: red;">{{ 'Phone number cannot exceed 10 digits' | translate }}</span>
+                      <span *ngIf="telephone?.hasError('pattern')" style="color: red;">{{ 'Invalid Tunisian or French phone number' | translate }}</span>
+                    </div>
+                  </div>
+                  
+                <div class="form-group col-md-6">
+                    <label for="password"><h6> {{'Password'|translate}}</h6></label> <span class="vnumgf" id="8" aria-label="Question obligatoire" style="color: red;"> *</span>
+                    <input type="password" name="password" class="form-control inputcnx" id="password" formControlName="password"> 
+                    
+                </div>
+
+                <br>
+                <div class="modal-footer mt-4"> 
+                    
+                    <button class="btn btn-success" 
+                            [disabled]="UserForm.invalid "
+                            
+                            type="submit">{{'Register'|translate}}</button>
+                            
+                    &nbsp;
+                    <button class="modal-footer" class="btn btn-primary" (click)="onBack()" >{{'Back'|translate}}</button>
+                    </div>
+            </div>
+            <br><br>  
+        </form>
+    </div>
+    </div>
+</div>

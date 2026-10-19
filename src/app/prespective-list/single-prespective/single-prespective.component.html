@@ -1,0 +1,50 @@
+<div class="content mar pp mt-2" >
+    <h4 class="">{{'Prestation details'|translate}}</h4>
+    
+  <div class="col-xs-12 px-4 py-4" style="background-color:rgb(242, 245, 245) ">
+    
+          <div class="row">
+          <div class="form-group col-md-6">
+              <label for="description"> <h6>{{'Description'}}:</h6> {{prespective.description}} </label>    
+          </div>
+          
+          <div class="form-group col-md-6">
+              <label for="montant_HT"> <h6>{{'Montant_HT'}}:</h6> {{prespective.montant_HT}} </label>  
+          </div>
+          <div class="form-group col-md-6">
+            <label for="optiontva"> <h6>{{'TVA'}}:  </h6> {{prespective.optiontva}}</label>  
+          </div>
+          <div class="form-group col-md-6">
+            <label for="prix_unitaire_HT"> <h6>  {{'prix_unitaire_HT'}} :</h6>{{prespective.prix_unitaire_HT}}</label>  
+          </div>
+          <div class="form-group col-md-6">
+            <label for="quantite"> <h6>  {{'Quantite'}} :</h6>{{prespective.quantite}}</label>  
+          </div>
+       
+          <div class="form-group col-md-6">
+            <label for="idcategorie"> <h6> {{'Category'}} :{{ this.nomcategoriedata.nomcategorie}}</h6> </label> 
+          </div>
+          
+  </div>
+       
+        <h1 class="">{{'Date'|translate}} </h1>
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label for="datecreation"><h6>Date creation :</h6> </label> 
+            {{ prespective?.datecreation | date :'dd/MM/YYYY H:m:s' }} 
+          </div>
+          <div class="form-group col-md-6">
+              <label for="datemodification"><h6>Date modification :</h6> </label> 
+              {{ prespective?.datemodification | date :'dd/MM/YYYY H:m:s' }} 
+          </div>
+        </div>
+      <div class="modal-footer"> 
+        <button class="btn btn-primary" (click)="onBack()" >Retour</button>
+      </div>    
+  </div>
+  
+  
+  
+  
+  
+  

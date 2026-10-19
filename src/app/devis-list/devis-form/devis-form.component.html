@@ -1,0 +1,452 @@
+
+
+<div class="row mar">
+  <h4 class="mt-4 size">{{ "Save a new Estimate" | translate }}</h4>
+  <div class="content mt-2 px-4">
+    <div class="col-md-12">
+      <form
+        class="form-horizontal ms-3"
+        [formGroup]="DevisForm"
+        (ngSubmit)="onSaveDevis()"
+        *ngIf="this.nomsocietedata?.id"
+
+        >
+        <div class="md0UAd" aria-hidden="true" style="color: red">
+        *{{ "Required" | translate }}
+      </div>
+      
+
+      <div class="row">
+        <div class="col-md-6">
+       
+          <div class="form-group">
+            <label for="idsociete"
+              ><h6>{{ "Company" | translate }}</h6></label
+            >
+            <span
+              class="vnumgf"
+              id="26"
+              aria-label="Question obligatoire"
+              style="color: red"
+            >
+              *</span
+            >
+            <input
+              type="hidden"
+              class="form-control"
+              id="idsociete"
+              value="{{ this.nomsocietedata.id }}"
+              formControlName="idsociete"
+            />
+            : {{ this.nomsocietedata.nomsociete }}
+          </div>
+
+          <div class="form-group">
+            <label for="idclient"
+              ><h6>{{ "Client" | translate }}</h6></label
+            >
+            <span
+              class="vnumgf"
+              id="27"
+              aria-label="Question obligatoire"
+              style="color: red"
+            >
+              *</span
+            >
+            <select
+            class="form-control"
+            id="idclient"
+            formControlName="idclient"
+            
+          >
+            <option
+              *ngFor="let client of clientdata; let i = index"
+              value="{{ client.id }}"
+            >
+              {{ client.nomclient }}
+            </option>
+          </select>
+           
+          </div>
+
+          <div class="form-group mt-2">
+            <label for="type_dev_fac"
+              ><h6>
+                {{ "Type de device de devis Company" | translate }}
+              </h6></label
+            >
+            <span
+              class="vnumgf"
+              id="27"
+              aria-label="Question obligatoire"
+              style="color: red"
+            >
+              *</span
+            >
+
+            <select
+              
+              class="form-control"
+              id="type_dev_fac"
+              value="{{ this.nomsocietedata.id }}"
+              formControlName="type_dev_fac"
+             
+            >
+              <option value="{{ this.nomsocietedata.type_dev_fac }}">
+                {{ this.nomsocietedata.type_dev_fac }}
+              </option>
+            </select>
+            <!--<select  class="form-control" id="type_dev_fac" (change)="selecteddeviseoption()" formControlName="type_dev_fac">
+                      <option value="TND"> TND </option>
+                      <option value="Euro"> EURO </option> 
+                  </select>-->
+            
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="numdevis"
+              ><h6>{{ "Estimate number" | translate }}</h6></label
+            >
+            <span
+              class="vnumgf"
+              id="25"
+              aria-label="Question obligatoire"
+              style="color: red"
+            >
+              *</span
+            >
+            <input
+              type="hidden"
+              class="form-control"
+              id="numdevis"
+              value="{{ this.numdevisdata }}"
+              formControlName="numdevis"
+            />
+            : {{ this.numdevisdata }}
+          </div>
+
+          <div class="form-group">
+            <label for="date_valid_fact"
+              ><h6>{{ "Estimate validity date" | translate }}</h6></label
+            >
+            <span
+              class="vnumgf"
+              id="32"
+              aria-label="Question obligatoire"
+              style="color: red"
+            >
+              *</span
+            >
+            <input
+              type="date"
+              class="form-control"
+              id="date_valid_fact"
+              value="test"
+              formControlName="date_valid_fact"
+            />
+            <!--<div
+              *ngIf="date_valid_fact?.touched && date_valid_fact?.invalid"
+              class="error"
+            >
+              <span class="RHiWt" style="color: red"
+                >{{ "This field is required" | translate }}
+              </span>
+            </div>-->
+          </div>
+        </div>
+      </div>
+  <div formArrayName="devisForms">
+    <div *ngFor="let devisFormGroup of devisForms.controls; let i = index" [formGroupName]="i" class="devis-form-group">
+      <h2>{{ "Additional information" | translate }}</h2>
+
+      <div class="col-md-12 text-right">
+          <!-- <div class="col-md-6">
+                <select  class="form-control " id="idprespective" (change)="onSelectPerspective($event)" formControlName="selectedPerspective?.idprespective">
+                    <option *ngFor="let prespective of prestationdata ; let i= index " id="idprespective" value="{{prespective.id}}">{{prespective.label}}</option>
+                </select>
+            </div>
+              Button to Open the Modal 
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+                    Ajoute Prestation
+                </button>-->
+          <div class="d-flex flex-row ">
+           
+            <select
+            class="form-select"
+            
+            id="idprespecticve"
+            (change)="onSelectPerspective($event,i)"
+            formControlName="selectedPerspective?.idprespecticve"
+          >
+            <option
+              *ngFor="let prespective of prestationdata; let i = index"
+              id="idprespecticve"
+              name="label"
+              value="{{ prespective.id }}"
+            >
+              {{ prespective.label }}
+            </option>
+          </select>
+          
+          &nbsp;
+          <button
+            type="button"
+            class="btn btn-primary ms-3"
+            (click)="addDevisFormGroup()" 
+          >
+            {{ "Add" | translate }}
+          </button>
+          <button
+          type="button"
+          class="btn btn-primary ms-3"
+          
+          (click)="addReferenceFormGroup(i)">
+        
+          {{ "Ajouter Référence" | translate }}
+        </button>
+          &nbsp;
+          <button
+            type="button"
+            class="btn btn-success ms-3"
+            (click)="calculertotal(i)"
+          >
+            {{ "Calculate" | translate }}
+          </button>
+        </div>
+        </div>
+        <br />
+      <div formArrayName="references">
+          <table class="table align-middle mb-0 bg-white">
+              <thead class="bg-light">
+                <tr>
+                  <th>{{ "Ref" | translate }}</th>
+                  <th>{{ "Description" | translate }}</th>
+                  <th>{{ "Quantity" | translate }}</th>
+                  <th>{{ "Unit Price HT" | translate }}</th>
+                  <th>{{ "Amount excluding tax" | translate }}</th>
+                  <th>{{ "Action" | translate }}</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+          </table>    
+        <div *ngFor="let reference of getReferencesArray(i).controls; let j = index" [formGroupName]="j" class="reference-form-group">
+          <tr >
+            
+              <td>
+                {{ j + 1 }}
+                <input
+                  type="hidden"
+                  class="form-control"
+                  [id]="'refid' + j"
+                  [value]="j + 1"
+                  formControlName="refid"
+                />
+              
+              </td>
+
+              <td>
+                <input
+                  type="textarea"
+                  class="form-control"
+                  [id]="'description' + j"
+                  formControlName="description"
+                />
+              </td>
+
+              <td>
+                <input
+                  type="number"
+                  class="form-control"
+                  [id]="'quantite' + j"
+                  formControlName="quantite"
+                  value="prespective.quantite"
+                />
+              </td>
+
+              <td>
+                <input
+                  type="number"
+                  class="form-control"
+                  [id]="'prix_unitaire_HT' + j"
+                  formControlName="prix_unitaire_HT"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  class="form-control"
+                  [id]="'montant_HT' + j"
+                  formControlName="montant_HT"
+                />
+              </td>
+              <td>
+                <button
+                 
+                  class="btn btn-danger "
+                  type="button"
+                >
+                  <i-bs
+                    name="archive-fill"
+                    width="16"
+                    height="16"
+                    (click)="deleteReferenceFormGroup(i, j)"
+                  >
+                  </i-bs>
+                </button>
+              </td>
+            </tr>
+         <!-- <div>
+            <label for="description">Description</label>
+            <input id="description" formControlName="description" />
+          </div>
+
+          <div>
+            <label for="quantite">Quantité</label>
+            <input id="quantite" type="number" formControlName="quantite" />
+          </div>
+
+          <div>
+            <label for="prix_unitaire_HT">Prix Unitaire HT</label>
+            <input id="prix_unitaire_HT" type="number" formControlName="prix_unitaire_HT" />
+          </div>
+
+          <div>
+            <label for="montant_HT">Montant HT</label>
+            <input id="montant_HT" type="number" formControlName="montant_HT" />
+          </div>
+
+          <button type="button" (click)="deleteReferenceFormGroup(i, j)">Supprimer Référence</button>
+        </div>
+        <button type="button" (click)="addReferenceFormGroup(i)">Ajouter Référence</button>-->
+      </div>
+  </div>
+      <table class="table align-middle mb-0 bg-white">
+          <tbody>
+            <tr>
+              <th colspan="3"></th>
+              <th>{{ "Total HT" | translate }}</th>
+              <td>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="totalht"
+                  formControlName="totalht"
+                />
+              </td>
+            </tr>
+            <tr>
+              <th></th>
+              <th>
+                <label for="optiontva"
+                  ><h6>{{ "VAT option" | translate }}</h6></label
+                >
+                <span
+                  class="vnumgf"
+                  aria-label="Question obligatoire"
+                  style="color: red"
+                >
+                  *</span
+                >
+              </th>
+              <td>
+                <select
+                  class="form-control"
+                  id="optiontva"
+                  formControlName="optiontva"
+                  value="{{ this.nomsocietedata.id }}"
+                  (change)="selectedOption(i)"
+                >
+                  <option value="{{ this.nomsocietedata.optiontva }}">
+                    {{ this.nomsocietedata.optiontva }}
+                  </option>
+                </select>
+              </td>
+              <th>TVA</th>
+              <td>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="tva"
+                  formControlName="tva"
+                />
+              </td>
+            </tr>
+            <tr *ngIf="this.typedevfac == 'TND'">
+              <th colspan="3"></th>
+              <th>{{ "Tax stamp" | translate }}</th>
+              <td>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="timbrefiscal"
+                  formControlName="timbrefiscal"
+                />
+              </td>
+            </tr>
+            <tr>
+              <th colspan="3"></th>
+              <th>{{ "Total Price" | translate }}</th>
+              <td>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="totalttc"
+                  formControlName="totalttc"
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        . 
+     <!-- <div>
+        <label for="totalht">Total HT</label>
+        <input id="totalht" formControlName="totalht" />
+      </div>
+
+      <div>
+        <label for="optiontva">Option TVA</label>
+        <input id="optiontva" formControlName="optiontva" />
+      </div>
+
+      <div>
+        <label for="tva">TVA</label>
+        <input id="tva" formControlName="tva" />
+      </div>
+
+      <div>
+        <label for="timbrefiscal">Timbre Fiscal</label>
+        <input id="timbrefiscal" formControlName="timbrefiscal" />
+      </div>
+
+      <div>
+        <label for="totalttc">Total TTC</label>
+        <input id="totalttc" formControlName="totalttc" />
+      </div>
+
+      <div>
+        <label for="date_valid_fact">Date de Validité</label>
+        <input id="date_valid_fact" type="date" formControlName="date_valid_fact" />
+      </div>
+-->
+      <button type="button" class="btn btn-danger">    <i-bs name="archive-fill"
+        width="20"
+        height="30"
+        
+        (click)="deleteDevisFormGroup(i)"
+       >
+    </i-bs> </button>
+  </div>
+  
+
+
+
+  <!--<button type="button" (click)="addDevisFormGroup()" class="btn btn-primary">Ajouter Devis</button>-->
+  <button type="button" (click)="onSaveDevis()" class="btn btn-success">Enregistrer</button>
+  <button type="button" (click)="onBack()" class="btn btn-secondary">Retour</button>
+</div>
+      </form>
+     </div>
+  </div>
+</div>

@@ -1,0 +1,194 @@
+
+      
+        
+<div class="container-xxl position-relative  d-flex p-0 " id="print-section" mar>
+
+    
+    <div class=" mt-2 px-4">
+
+            <h4 class="size">{{'Prestation List'|translate}}</h4>
+
+            
+            <!--<form class="example" action="action_page.php">
+                <input #query (keyup)="search(query.value)" type="text" class="form-control" placeholder="{{'Search'|translate}}">
+                
+                
+            </form>
+        -->
+        
+        <div class="cardBox">
+            <div class="card">
+                <div >
+                    <div class="numbers">2000£</div>
+                    <div class="cardName">Revenus Total</div>
+                </div>
+        
+                <div class="iconBx">
+                    
+                </div>
+            </div>
+        
+            <div class="card">
+                <div>
+                    <div class="numbers">1000</div>
+                    <div class="cardName">Factures </div>
+                </div>
+        
+                <div class="iconBx">
+                   
+                </div>
+            </div>
+        
+            <div class="card">
+                <div>
+                    <div class="numbers">284</div>
+                    <div class="cardName">Comments</div>
+                </div>
+        
+                <div class="iconBx">
+                    
+                </div>
+            </div>
+        
+            
+        </div>
+        
+
+          
+                <div class="details mt-4 ">
+                    <div class="recentOrders">
+                      <div class="cardHeader">
+                        <div *ngFor="let prestation of filteredPrestations">
+                            <!-- Your prestation item display logic -->
+                          </div>
+                          
+                        <form class="search">
+                            <input 
+                              class="form-control" 
+                              type="search" 
+                              name="searchLabel"  
+                              placeholder="{{ 'Search' | translate }}" 
+                              [(ngModel)]="searchtext" 
+                              (input)="searchByLabel()" 
+                            />
+                          </form>
+                          <div *ngFor="let prestation of filteredPrestations | paginate: { itemsPerPage: pageSize, currentPage: page, totalItems: count }">
+                            <!-- Your prestation item display logic -->
+                          </div>
+                          
+                          <!-- Pagination controls -->
+                          <pagination-controls (pageChange)="handlePageChange($event)"></pagination-controls>
+                          
+                          <select (change)="handlePageSizeChange($event)">
+                            <option *ngFor="let size of pageSizes" [value]="size">{{ size }}</option>
+                          </select>
+                          
+
+                        
+                          
+                          
+                       <div>
+                        <button class="btn btn-primary" (click)="onNewPrestation()">{{'Add'|translate}}</button>
+                        &nbsp;
+                        <button class="btn btn-primary btn-xs" >{{'Export to Excel'|translate}}</button> 
+                       </div>
+            </div>
+            <hr>
+            
+
+        
+          <div class="tab">
+            <table class="" id="excel-table">
+                <thead class="">
+    <tr>
+        <th>{{'Label'|translate}}</th>
+        <th>{{'Total_HT'|translate}}</th>
+        <th>{{'TVA'|translate}}</th>
+        <th>{{'Total_TTC'|translate}}</th>
+        <th>{{'Actions'|translate}}</th>
+    </tr>
+    </thead>
+    <tbody >
+    <tr *ngFor="let prestation of searchPrestations| paginate: {
+        itemsPerPage: pageSize,
+        currentPage: page,
+        totalItems: count
+        }; let i= index " >
+
+        
+        <td> 
+            {{ prestation.label }}
+        </td>
+        <td> 
+            {{ prestation.totalht }}
+        </td>
+        <td> 
+            {{ prestation.tva }}
+        </td>
+        <td> 
+            {{ prestation.totalttc }}
+        </td>
+       <!-- <td *ngFor="let references of prestation.references"> 
+           <a >{{references.description}}</a>
+        </td>-->
+        
+        
+        <td>
+            <span style="color: rgb(13, 161, 229);">
+                <i-bs name="eye"
+                    width="25"
+                    height="30" 
+                    (click)="onViewPrestation(prestation.id)">
+                </i-bs>
+            </span>  
+
+            &nbsp;
+
+            <span style="color: rgb(22, 109, 222);">
+                <i-bs name="pencil-square"
+                    width="25"
+                    height="30" 
+                    (click)="oneditPrestation(prestation.id)">
+                </i-bs>
+            </span>   
+
+            &nbsp;
+
+            <span style="color: red; ">
+                <i-bs name="archive-fill"
+                    width="25"
+                    height="30"
+                    (click)="onDeletePrestation(prestation.id)">
+                </i-bs>  
+            </span>            
+        
+        </td>
+    </tr>
+    
+    </tbody>
+</table><br>
+
+<br><br>
+    <div class="row">
+            <div class="col-md-6">
+                <pagination-controls
+                    previousLabel="{{'Prev'|translate}}"
+                    nextLabel="{{'Next'|translate}}"
+                    [responsive]="true"
+                    (pageChange)="handlePageChange($event)"
+                    >
+                </pagination-controls>
+            </div>
+            
+            <div class="col-md-6">
+                <strong>{{'Element per page'|translate}}:</strong>
+                <select (change)="handlePageSizeChange($event)" >
+                    <option *ngFor="let size of pageSizes" [ngValue]="size">
+                        {{size}}
+                    </option>
+                </select>
+            </div>
+    </div>
+</div>       
+</div>
+

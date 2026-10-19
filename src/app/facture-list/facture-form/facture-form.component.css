@@ -1,0 +1,55 @@
+input .form-control{
+  width: 50%;
+
+}
+select .form-control{
+  width: 80%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+font-family: "Jost", sans-serif;
+font-size:large;
+}
+
+label{
+padding-left: 10px;
+}
+
+div .form-group  {
+padding-left: 20px;
+padding-top: 10px;
+font-size:large;
+}
+thead .bg-light{
+  font-size: large;
+}
+
+div .modal-footer {
+padding-right: 20px;
+padding-bottom: 10px;
+}
+
+div .modal-title  {
+padding-left: 20px;
+padding-top: 10px;
+font-size: 30px;
+font-family:fantasy;
+}
+
+div .md0UAd{
+  padding-left: 20px;
+  padding-top: 10px;
+  margin: auto;
+}
+
+select .form-control  {
+  margin: auto;
+  size: 50px;
+  
+}
+

@@ -1,0 +1,176 @@
+/*input{
+    width:100%;
+    margin: auto;
+    padding: auto;
+}
+
+
+h2{
+    font-family:roboto,"Noto Sans Myanmar UI",arial,sans-serif;
+
+    font-size: 40px;
+    color: rgb(104, 153, 237);
+}
+
+label{
+    text-decoration:solid;
+}
+
+
+.btn-group-sm>.btn, .btn-sm {
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: .2rem;
+}
+.text-white {
+    background-color: #fff;
+}
+.text-google {
+color: red;
+}
+.btn-light {
+    color: #212529;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+    
+}
+.btn-light:not([disabled]):hover {
+    color: #212529;
+    background-color: #e2e6ea;
+    border-color: #dae0e5;
+}
+.btn-left-space {
+margin-left: 10px;
+}
+
+.rember{
+    width: 20px;
+}
+.align{
+    text-align: center;
+    
+}
+.text-center{
+   
+    
+}
+.img{
+    width: 500px;
+    
+}
+.f{
+    margin :500px;
+}
+
+.b{
+    border-radius: 0px 50px 50px 50px;
+}*/
+.content{
+    width: 1440px;
+    height: 1216px;
+    margin-left: 12px;
+    border-radius: 20px;
+    background: rgba(235, 240, 244, 1);
+    
+    
+    }
+    .accueil{
+        width: 1440px;
+        height: 1216px;
+        margin-left: 0px;
+        border-radius: 20px 20px 20px 20px;
+        background: rgba(235, 240, 244, 1);  
+    }
+    .selectLang{
+        
+        width: 70px;
+    }
+    
+    .division{
+        background-color: white;
+        width: 840px;
+        height: 1163px;
+        margin-top: 53px;
+        margin-left: 649px;
+        gap: 0px;
+        opacity: 0px;
+        border-radius: 50px 0px 0px 0px;
+    
+    
+    }
+    
+    .division1{
+        width:200px ;
+    }
+    .display{
+      margin-left: 150px;
+    }
+    .bienvenue{
+        text-align: center;
+        color: rgba(14, 165, 233, 1);
+
+        text-transform: uppercase;
+    }
+    .bgForm{
+        background: rgba(235, 234, 234, 1);
+        box-shadow: 0px 4px 13px 0px rgba(209, 238, 250, 1);
+
+        
+        border-radius: 20px;
+     
+        width: 423px;
+        height: 620px;
+       
+        margin-top: 126px;
+        margin-left: 20px;
+        margin-right: 80px;
+       
+    }
+    .img-f{
+        width: 620px;
+        height: 620px;
+        margin-top: 59px;
+        margin-left: 117px;
+        
+    
+    
+    }
+    .btncnx{
+        
+        width: 351px;
+        height:62px;
+        margin-top: 44px;
+        margin-left: 15px;
+        padding: 5px 16px 5px 16px;
+        color: white;
+       font-family: Nunito Sans;
+
+        border-radius: 10px ;
+        background: rgba(14, 165, 233, 1);
+        border:rgba(14, 165, 233, 1);
+      
+
+
+        
+       
+    }
+    .imgGmail{
+        width: 50px;
+        height: 50px;
+    
+    }
+    .btnCnx{
+        margin: 45px;
+        justify-content: space-between;
+        color: black;
+        text-decoration: none;
+        
+    }
+    .btnCnx:hover{
+        color :#0eabe9
+    }
+    
+    .inputcnx{
+        background-color:  rgb(180, 178, 178,1)
+     }

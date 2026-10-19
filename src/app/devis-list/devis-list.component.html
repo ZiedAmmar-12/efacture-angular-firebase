@@ -1,0 +1,161 @@
+    
+        
+            <div class="container-xxl position-relative  d-flex p-0 "  *ngIf="this.datasociete" id="print-section">
+
+    
+                <div class=" mt-2 px-4">
+            
+                        <h4 class="size">{{'Estimate List'|translate}}</h4>
+            
+                        
+                        <!--<form class="example" action="action_page.php">
+                            <input #query (keyup)="search(query.value)" type="text" class="form-control" placeholder="{{'Search'|translate}}">
+                            
+                            
+                        </form>
+                    -->
+                    
+                    <div class="cardBox">
+                        <div class="card">
+                            <div >
+                                <div class="numbers">2000£</div>
+                                <div class="cardName">Revenus Total</div>
+                            </div>
+                    
+                            <div class="iconBx">
+                                
+                            </div>
+                        </div>
+                    
+                        <div class="card">
+                            <div>
+                                <div class="numbers">1000</div>
+                                <div class="cardName">Factures </div>
+                            </div>
+                    
+                            <div class="iconBx">
+                               
+                            </div>
+                        </div>
+                    
+                        <div class="card">
+                            <div>
+                                <div class="numbers">284</div>
+                                <div class="cardName">Comments</div>
+                            </div>
+                    
+                            <div class="iconBx">
+                                
+                            </div>
+                        </div>
+                    
+                        
+                    </div>
+                    
+            
+                      
+                            <div class="details mt-4 ">
+                                <div class="recentOrders">
+                                  <div class="cardHeader">
+                                    <form class="search">
+                                      <input class="form-control " type="search" placeholder="{{'Search'|translate}}">
+                                    </form>
+                                   <div>
+                                    <button class="btn btn-primary" (click)="onNewDevis()">{{'Add'|translate}}</button>
+                                    &nbsp;
+                                    <button class="btn btn-primary btn-xs" (click)="exportexcel()">{{'Export to Excel'|translate}}</button> 
+                                   </div>
+                        </div>
+                        <hr>
+                        
+            
+                    
+                      <div class="tab">
+                        <table class="" id="excel-table">
+                            <thead class="">
+                <tr>
+                    <th>{{'Estimate number'|translate}}</th>
+                    <th>{{'Company telephone number'|translate}}</th>
+                    <th>{{'Siret company'|translate}}</th>
+                    <th>{{'Actions'|translate}}</th>
+                </tr>
+                </thead>
+                <tbody >
+                <tr *ngFor="let devis of searchDevis | paginate: {
+                    itemsPerPage: pageSize,
+                    currentPage: page,
+                    totalItems: count
+                    }; let i= index " >
+
+                    
+                    <td> 
+                        {{ devis.numDevis }}
+                    </td>
+                    
+                    <td>
+                       {{this.datasociete.telephone}} 
+                    </td>
+                    
+                    <td> 
+                       {{this.datasociete.siret}} 
+                    </td>
+                    <td>
+                        <span style="color: rgb(13, 161, 229);">
+                            <i-bs name="eye"
+                                width="25"
+                                height="30" 
+                                (click)="onViewDevis(devis.id)">
+                            </i-bs>
+                        </span>  
+
+                        &nbsp;
+
+                        <span style="color: rgb(22, 109, 222);">
+                            <i-bs name="pencil-square"
+                                width="25"
+                                height="30" 
+                                (click)="onEditDevis(devis.id)">
+                            </i-bs>
+                        </span>   
+
+                        &nbsp;
+
+                        <span style="color: red; ">
+                            <i-bs name="archive-fill"
+                                width="25"
+                                height="30"
+                                (click)="onDeleteDevis(devis.id)">
+                            </i-bs>  
+                        </span>            
+                    
+                    </td>
+                </tr>
+                
+                </tbody>
+            </table><br>
+        
+            <button class="btn btn-primary" (click)="onBack()" >{{'Back'|translate}}</button>
+            <br><br>
+                <div class="row">
+                        <div class="col-md-6">
+                            <pagination-controls
+                                previousLabel="{{'Prev'|translate}}"
+                                nextLabel="{{'Next'|translate}}"
+                                [responsive]="true"
+                                (pageChange)="handlePageChange($event)"
+                                >
+                            </pagination-controls>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <strong>{{'Element per page'|translate}}:</strong>
+                            <select (change)="handlePageSizeChange($event)" >
+                                <option *ngFor="let size of pageSizes" [ngValue]="size">
+                                    {{size}}
+                                </option>
+                            </select>
+                        </div>
+                </div>
+    </div>       
+</div>
+

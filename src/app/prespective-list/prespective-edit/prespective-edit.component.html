@@ -1,0 +1,62 @@
+<div class="row">
+    <div class="content mt-2 px-4">
+    <div class="col-sm-12 col-sm-offset-2   ">
+        <h4 class="" >{{'Edit Prestation'| translate}}</h4>
+        <form class="form-horizontal" [formGroup]="PrespectiveFormedit" (ngSubmit)="onUpdatePrespectiveedit(PrespectiveFormedit)">
+            <div class="row" style="background-color:rgb(220, 224, 224)">  
+
+            <div class="md0UAd modal-title" aria-hidden="true" dir="auto" style="background-color:rgb(224, 237, 238) ; color: red;" >*{{'Required'|translate}}</div>
+
+           
+            <div class="form-group col-md-6">
+                <label for="description"><h6>{{'Description Prestation'|translate}}</h6></label> <span class="vnumgf" id="9" aria-label="Question obligatoire" style="color: red;"> *</span>
+                <input type="text" class="form-control" id="description" formControlName="description" maxlength="235">
+               
+            </div>
+            <div class="form-group col-md-6">
+                <label for="category"><h6>{{'category Prestation'|translate}}</h6></label> <span class="vnumgf" id="9" aria-label="Question obligatoire" style="color: red;"> *</span>
+                <input type="text" class="form-control" id="category" formControlName="category" maxlength="235">
+               
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="quantite"><h6>{{'Quantité Prestation'|translate}}</h6></label> <span class="vnumgf" id="9" aria-label="Question obligatoire" style="color: red;"> *</span>
+                <input type="number" class="form-control" id="quantite" formControlName="quantite" maxlength="35">
+                
+            </div>
+            <div class="form-group col-md-6">
+                <label for="prix_unitaire_HT"><h6>{{'Prix unitaire HT Prestation'|translate}}</h6></label> <span class="vnumgf" id="9" aria-label="Question obligatoire" style="color: red;"> *</span>
+                <input type="text" class="form-control" id="prix_unitaire_HT" formControlName="prix_unitaire_HT" maxlength="35">
+               
+            </div>
+            <div class="form-group col-md-6">
+                <label for="optiontva"><h6>{{'TVA'|translate}}</h6></label> <span class="vnumgf" id="9" aria-label="Question obligatoire" style="color: red;"> *</span>
+                <input type="text" class="form-control" id="optiontva" formControlName="optiontva" maxlength="254">
+               
+            </div>
+            <div class="form-group col-md-6">
+                <label for="montant_HT"><h6>{{'Montant HT'|translate}}</h6></label> <span class="vnumgf" id="9" aria-label="Question obligatoire" style="color: red;"> *</span>
+                <input type="text" class="form-control" id="montant_HT" formControlName="montant_HT" maxlength="35">
+               
+            </div>
+           
+            
+           
+                <br>
+                
+                <div class="modal-footer"> 
+                    <button class="btn btn-success" 
+                            [disabled]="PrespectiveFormedit.invalid || fileIsUploading"
+                            type="submit">{{'Confirme'|translate}}</button>  
+                    &nbsp;
+                    <button class="btn btn-primary" (click)="onBack()" >{{'Back'|translate}}</button>
+                </div>
+                <br>
+            
+            <br><br>
+            </div>
+        </form>
+    </div>
+    </div>
+
+</div>
